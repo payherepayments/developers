@@ -6,4 +6,49 @@ sidebar_label: Embed SDK
 
 ## Payment button
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus elementum massa eget nulla aliquet sagittis. Proin odio tortor, vulputate ut odio in, ultrices ultricies augue. Cras ornare ultrices lorem malesuada iaculis. Etiam sit amet libero tempor, pulvinar mauris sed, sollicitudin sapien.
+We try to make getting setup with PayHere as easy as possible, that's why you can easily copy and paste two lines of code and have an integrated payment modal operating on your site. Our base install is as easy as copy pasting a snippet from your plan in the merchant admin.
+
+![Embed code](/img/docs/embed.png)
+
+This code is very straightforward:
+
+```html
+<button data-payhere-embed="https://payhere.co/altlabs/buy/coffee">PayHere</button>
+<script src="https://payhere.co/embed/embed.js"></script>
+```
+
+### Additional parameters available
+
+- `data-payhere-embed="url-to-payment-form"` **Required** - this is the only required param and must link directly to your payment form.
+- `data-payhere-customer-name="customer-name"` *Optional* - allows you to prefill customers name
+- `data-payhere-customer-email="customer@email.com"` *Optional* - allows you to prefill customers email address
+- `data-payhere-disable-customer="yes"` *Optional* - disables the customer fields so they cannot edit their details, this is useful if you want to ensure the customers email address on your system matches up with PayHere
+
+A complete example:
+
+```html
+<button
+  data-payhere-embed="https://payhere.co/altlabs/buy/coffee"
+  data-payhere-customer-name="Pete Hawkins"
+  data-payhere-customer-email="pete@example.org"
+  data-payhere-disable-customer="yes"
+>
+  Buy me a coffee
+</button>
+<script src="https://payhere.co/embed/embed.js"></script>
+```
+
+### Multiple plans per page
+
+One other thing to bear in mind, you can have multiple plans on your page, for this you'll only need to include the embed code once.
+
+```html
+<button data-payhere-embed="https://payhere.co/altlabs/buy/coffee">Buy me an americano</button>
+<button data-payhere-embed="https://payhere.co/altlabs/buy/coffee-flat-white">Buy me a flat white</button>
+<button data-payhere-embed="https://payhere.co/altlabs/buy/coffee-late">Buy me a latte</button>
+<script src="https://payhere.co/embed/embed.js"></script>
+```
+
+## Advanced JavaScript embed (coming soon)
+
+We are working on the finishing touches of this now, it's currently in private beta, shipping very soon! This more advanced integration will allow success and failure callbacks and support more options than the payment buttons above.
