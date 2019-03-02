@@ -1,0 +1,8 @@
+{
+  "docs": {
+    "Overview": ["intro"],
+    "Embed SDK": ["embed-sdk"],
+    "Webhooks": ["webhooks"],
+    "API": ["api"]
+  }
+}
