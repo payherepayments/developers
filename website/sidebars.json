@@ -3,6 +3,11 @@
     "Overview": ["intro"],
     "Integrations": ["link", "embed-sdk", "webhooks"],
     "API": ["api-auth"],
-    "/api": ["api-payments", "api-refunds", "api-user"]
+    "/api": [
+      "api-payments",
+      "api-payment-show",
+      "api-refunds",
+      "api-user"
+    ]
   }
 }
