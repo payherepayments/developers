@@ -4,6 +4,8 @@
     "Integrations": ["link", "embed-sdk", "webhooks"],
     "API": ["api-auth"],
     "/api": [
+      "api-customers",
+      "api-customer-show",
       "api-payments",
       "api-payment-show",
       "api-refunds",
