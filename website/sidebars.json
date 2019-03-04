@@ -1,7 +1,8 @@
 {
   "docs": {
     "Overview": ["intro"],
-    "Integrations": ["link", "embed-sdk", "webhooks", "api"],
+    "Integrations": ["link", "embed-sdk", "webhooks"],
+    "API": ["api-auth"],
     "API Endpoints": []
   }
 }
