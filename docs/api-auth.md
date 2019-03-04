@@ -14,14 +14,12 @@ Our API is secured by API keys, please make sure you **don’t share these keys*
 
 We recommend passing your API key in the Authorization header, like so:
 
-#### Curl
-
+<!--DOCUSAURUS_CODE_TABS-->
+<!--Curl-->
 ```sh
 $ curl -X GET https://api.payhere.co/api/v1/user -H "Authorization: Bearer ${api_key_here}"
 ```
-
-#### Ruby
-
+<!--Ruby-->
 ```ruby
 require "http"
 require "json"
@@ -32,6 +30,8 @@ raw_json = HTTP.auth("Bearer #{api_key_here}")
 
 json = JSON.parse(raw_json)
 ```
+<!--END_DOCUSAURUS_CODE_TABS-->
+
 
 ### access_token parameter
 
