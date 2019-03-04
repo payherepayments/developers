@@ -1,6 +1,6 @@
 ---
 id: api-user
-title: /api/v1/user
+title: GET /api/v1/user
 sidebar_label: /v1/user
 ---
 

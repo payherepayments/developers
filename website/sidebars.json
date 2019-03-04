@@ -3,6 +3,6 @@
     "Overview": ["intro"],
     "Integrations": ["link", "embed-sdk", "webhooks"],
     "API": ["api-auth"],
-    "/api": ["api-user"]
+    "/api": ["api-refunds", "api-user"]
   }
 }
