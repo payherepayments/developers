@@ -20,7 +20,13 @@
           "api-payment-show"
         ]
       },
-      "api-refunds",
+      {
+        "type": "subcategory",
+        "label": "/v1/refunds",
+        "ids": [
+          "api-refunds"
+        ]
+      },
       {
         "type": "subcategory",
         "label": "/v1/subscriptions",
@@ -30,7 +36,13 @@
           "api-subscription-destroy"
         ]
       },
-      "api-user"
+      {
+        "type": "subcategory",
+        "label": "/v1/user",
+        "ids": [
+          "api-user"
+        ]
+      }
     ]
   }
 }

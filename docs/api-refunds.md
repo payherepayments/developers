@@ -1,7 +1,7 @@
 ---
 id: api-refunds
 title: POST /api/v1/refunds
-sidebar_label: /v1/refunds
+sidebar_label: POST /
 ---
 
 This will refund a customer the amount specified, can be a partial refund.
