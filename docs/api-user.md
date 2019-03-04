@@ -1,6 +1,5 @@
 ---
-id: version-1.0-api-user
-original_id: api-user
+id: api-user
 title: /api/v1/user
 sidebar_label: /v1/user
 ---
