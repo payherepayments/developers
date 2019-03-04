@@ -41,3 +41,4 @@ json = JSON.parse(raw_json)
 
 ## Errors
 
+- **401** Unauthorized
