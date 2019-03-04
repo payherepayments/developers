@@ -1,7 +1,7 @@
 ---
 id: api-customers
 title: GET /api/v1/customers
-sidebar_label: /v1/customers
+sidebar_label: GET /
 ---
 
 List all of your customers, ordered chronologically, most recent first.

@@ -4,11 +4,32 @@
     "Integrations": ["link", "embed-sdk", "webhooks"],
     "API": ["api-auth"],
     "/api": [
-      "api-customers",
-      "api-customer-show",
-      "api-payments",
-      "api-payment-show",
+      {
+        "type": "subcategory",
+        "label": "/v1/customers",
+        "ids": [
+          "api-customers",
+          "api-customer-show"
+        ]
+      },
+      {
+        "type": "subcategory",
+        "label": "/v1/payments",
+        "ids": [
+          "api-payments",
+          "api-payment-show"
+        ]
+      },
       "api-refunds",
+      {
+        "type": "subcategory",
+        "label": "/v1/subscriptions",
+        "ids": [
+          "api-subscriptions",
+          "api-subscription-show",
+          "api-subscription-destroy"
+        ]
+      },
       "api-user"
     ]
   }

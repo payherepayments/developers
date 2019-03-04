@@ -1,7 +1,7 @@
 ---
 id: api-payments
 title: GET /api/v1/payments
-sidebar_label: /v1/payments
+sidebar_label: GET /
 ---
 
 List all of your payments, ordered chronologically, most recent first.
@@ -70,6 +70,3 @@ parsed = JSON.parse(resp.body)
 
 - **400** Bad request
 - **401** Unauthorized
-
-
-

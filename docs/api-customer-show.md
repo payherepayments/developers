@@ -1,7 +1,7 @@
 ---
 id: api-customer-show
 title: GET /api/v1/customers/:id
-sidebar_label: /v1/customers/:id
+sidebar_label: GET /:id
 ---
 
 Fetch a customer by ID, this will also pull down their subscriptions and payment history.

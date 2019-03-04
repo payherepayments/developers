@@ -1,7 +1,7 @@
 ---
 id: api-payment-show
 title: GET /api/v1/payments/:id
-sidebar_label: /v1/payments/:id
+sidebar_label: GET /:id
 ---
 
 Fetch a payment by ID
