@@ -49,6 +49,36 @@ One other thing to bear in mind, you can have multiple plans on your page, for t
 <script src="https://payhere.co/embed/embed.js"></script>
 ```
 
-## Advanced JavaScript embed (coming soon)
+## Advanced JavaScript embed
 
-We are working on the finishing touches of this now, it's currently in private beta, shipping very soon! This more advanced integration will allow success and failure callbacks and support more options than the payment buttons above.
+This more advanced integration will allow success and failure callbacks and support more options than the payment buttons above.
+
+```js
+PayHere.launch({
+  embedURL: "https://payhere.co/altlabs/buy/coffee",
+  customerName: "Pete Hawkins",
+  customerEmail: "pete@example.org",
+  disableCustomer: true,
+  onSuccess: function(payment) {
+    //
+  },
+  onFailure: function(error) {
+    //
+  }
+})
+```
+
+### Properties
+
+- **embedURL** - the link to your PayHere payment form
+- **customerName** - optional name to prefill customer info
+- **customerEmail** - optional email to prefill customer info
+- **disableCustomer** - optionally disable the customer fields so they can't be edited
+- **onSuccess** - optional callback - returns a [Payment, see the payment API for schema](api-payment-show.md).
+- **onFailure** - optional callback - returns an error
+
+    ```json
+    {
+      error: "Card declined"
+    }
+    ```
