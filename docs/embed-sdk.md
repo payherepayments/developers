@@ -58,7 +58,7 @@ PayHere.launch({
   embedURL: "https://payhere.co/altlabs/buy/coffee",
   customerName: "Pete Hawkins",
   customerEmail: "pete@example.org",
-  disableCustomer: true,
+  disableCustomer: "yes",
   onSuccess: function(payment) {
     //
   },
@@ -73,7 +73,7 @@ PayHere.launch({
 - **embedURL** - the link to your PayHere payment form
 - **customerName** - optional name to prefill customer info
 - **customerEmail** - optional email to prefill customer info
-- **disableCustomer** - optionally disable the customer fields so they can't be edited
+- **disableCustomer** - optionally disable the customer fields so they can't be edited, set this to `"yes"` to disable
 - **onSuccess** - optional callback - returns a [Payment, see the payment API for schema](api-payment-show.md).
 - **onFailure** - optional callback - returns an error
 
