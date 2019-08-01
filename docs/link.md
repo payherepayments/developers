@@ -6,7 +6,7 @@ sidebar_label: Simple link
 
 ## The easiest way to start accepting payments
 
-The easiest way to use PayHere is simply to copy the URL to your payment form and share it directly with your customers. That could be in an email, whats app message or by adding a link to your website. You can copy the link from the merchants admin when viewing your plans.
+The easiest way to use Payhere is simply to copy the URL to your payment form and share it directly with your customers. That could be in an email, whats app message or by adding a link to your website. You can copy the link from the merchants admin when viewing your plans.
 
 ![Copy plan link](/img/docs/copy-link.png)
 

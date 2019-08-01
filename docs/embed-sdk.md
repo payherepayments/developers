@@ -6,14 +6,14 @@ sidebar_label: Embed SDK
 
 ## Payment button
 
-We try to make getting setup with PayHere as easy as possible, that's why you can easily copy and paste two lines of code and have an integrated payment modal operating on your site. Our base install is as easy as copy pasting a snippet from your plan in the merchant admin.
+We try to make getting setup with Payhere as easy as possible, that's why you can easily copy and paste two lines of code and have an integrated payment modal operating on your site. Our base install is as easy as copy pasting a snippet from your plan in the merchant admin.
 
 ![Embed code](/img/docs/embed.png)
 
 This code is very straightforward:
 
 ```html
-<button data-payhere-embed="https://payhere.co/altlabs/buy/coffee">PayHere</button>
+<button data-payhere-embed="https://payhere.co/altlabs/buy/coffee">Payhere</button>
 <script src="https://payhere.co/embed/embed.js"></script>
 ```
 
@@ -22,7 +22,7 @@ This code is very straightforward:
 - `data-payhere-embed="url-to-payment-form"` **Required** - this is the only required param and must link directly to your payment form.
 - `data-payhere-customer-name="customer-name"` *Optional* - allows you to prefill customers name
 - `data-payhere-customer-email="customer@email.com"` *Optional* - allows you to prefill customers email address
-- `data-payhere-disable-customer="yes"` *Optional* - disables the customer fields so they cannot edit their details, this is useful if you want to ensure the customers email address on your system matches up with PayHere
+- `data-payhere-disable-customer="yes"` *Optional* - disables the customer fields so they cannot edit their details, this is useful if you want to ensure the customers email address on your system matches up with Payhere
 
 A complete example:
 
@@ -54,7 +54,7 @@ One other thing to bear in mind, you can have multiple plans on your page, for t
 This more advanced integration will allow success and failure callbacks and support more options than the payment buttons above.
 
 ```js
-PayHere.launch({
+Payhere.launch({
   embedURL: "https://payhere.co/altlabs/buy/coffee",
   customerName: "Pete Hawkins",
   customerEmail: "pete@example.org",
@@ -70,7 +70,7 @@ PayHere.launch({
 
 ### Properties
 
-- **embedURL** - the link to your PayHere payment form
+- **embedURL** - the link to your Payhere payment form
 - **customerName** - optional name to prefill customer info
 - **customerEmail** - optional email to prefill customer info
 - **disableCustomer** - optionally disable the customer fields so they can't be edited, set this to `"yes"` to disable

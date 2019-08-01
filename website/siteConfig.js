@@ -72,7 +72,7 @@ const siteConfig = {
   */
 
   // This copyright info is used in /core/Footer.js and blog RSS/Atom feeds.
-  copyright: `Copyright © ${new Date().getFullYear()} PayHere Payments Ltd`,
+  copyright: `Copyright © ${new Date().getFullYear()} Payhere Payments Ltd`,
 
   highlight: {
     // Highlight.js theme to use for syntax highlighting in code blocks.

@@ -25,7 +25,7 @@ class HomeSplash extends React.Component {
 
     const ProjectTitle = () => (
       <h2 className="projectTitle">
-        <img src="/img/payhere-blue.svg" width="200" alt="PayHere" />
+        <img src="/img/payhere-blue.svg" width="200" alt="Payhere" />
         <small>{siteConfig.tagline}</small>
       </h2>
     );

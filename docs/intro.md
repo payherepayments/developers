@@ -4,11 +4,11 @@ title: Getting Started
 sidebar_label: Getting Started
 ---
 
-PayHere makes it simple to integrate with your existing service. We are always improving our integrations, so keep an eye out here for changes.
+Payhere makes it simple to integrate with your existing service. We are always improving our integrations, so keep an eye out here for changes.
 
 ## Simple link
 
-The most basic way to get started with PayHere is by emailing your customers a link to a payment form, or setting up a link on your website.
+The most basic way to get started with Payhere is by emailing your customers a link to a payment form, or setting up a link on your website.
 
 [Read more](link.md)
 
@@ -17,7 +17,7 @@ The most basic way to get started with PayHere is by emailing your customers a l
 Our embed SDK is the next level up, but it still only requires two lines of code
 
 ```html
-<button data-payhere-embed="https://payhere.co/altlabs/buy/coffee">PayHere</button>
+<button data-payhere-embed="https://payhere.co/altlabs/buy/coffee">Payhere</button>
 <script src="https://payhere.co/embed/embed.js"></script>
 ```
 

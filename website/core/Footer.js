@@ -48,7 +48,7 @@ class Footer extends React.Component {
             </a>
           </div>
           <div>
-            <h5>PayHere</h5>
+            <h5>Payhere</h5>
             <a href={this.pageUrl('help.html')}>
               Help
             </a>

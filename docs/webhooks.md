@@ -3,13 +3,13 @@ id: webhooks
 title: Webhooks
 ---
 
-Webhooks allow us to securely communicate with your backend platform and offer the best means of advanced integration between PayHere and your service. You can [read about how we use webhooks](https://medium.com/payhere/how-payhere-powers-benmudge-com-4b7827dc2ae) to securely integrate with benmudge.com.
+Webhooks allow us to securely communicate with your backend platform and offer the best means of advanced integration between Payhere and your service. You can [read about how we use webhooks](https://medium.com/payhere/how-payhere-powers-benmudge-com-4b7827dc2ae) to securely integrate with benmudge.com.
 
 ## Verifying webhooks are legitimate
 
 First things first, we sign all of our webhooks with a shared secret, you can find yours in the [merchants admin](https://payhere.co/merchants/integrations).
 
-Our example below is in Ruby, the first step to receiving webhooks is to verify that they came from PayHere, you can do that by generating an HMAC digest of the entire request body and signing it with the shared secret you got above. If these don't match up we can return an HTTP unauthorized code.
+Our example below is in Ruby, the first step to receiving webhooks is to verify that they came from Payhere, you can do that by generating an HMAC digest of the entire request body and signing it with the shared secret you got above. If these don't match up we can return an HTTP unauthorized code.
 
 ```ruby
 module Events
@@ -38,7 +38,7 @@ end
 
 ## Handling event types
 
-PayHere will send webhooks with an `event` key in the body, you can use this to determine the nature of the webhook and wether you need to act on it or not.
+Payhere will send webhooks with an `event` key in the body, you can use this to determine the nature of the webhook and wether you need to act on it or not.
 
 ```rb
 def create

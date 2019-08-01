@@ -27,7 +27,7 @@ function Help(props) {
       title: 'Browse Docs',
     },
     {
-      content: 'Find out [what’s new for PayHere developers](/blog)',
+      content: 'Find out [what’s new for Payhere developers](/blog)',
       title: 'Stay up to date',
     },
     {
