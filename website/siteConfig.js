@@ -47,8 +47,8 @@ const siteConfig = {
   users,
 
   /* path to images for header/footer */
-  headerIcon: 'img/payhere-white.svg',
-  footerIcon: 'img/payhere-white.svg',
+  headerIcon: 'img/payhere-white-stamp.svg',
+  footerIcon: 'img/payhere-white-stamp.svg',
   favicon: 'img/favicon.png',
 
   /* Colors for website */
