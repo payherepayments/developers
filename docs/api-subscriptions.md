@@ -67,6 +67,29 @@ parsed = JSON.parse(resp.body)
         "created_at": "2019-03-04T17:06:36.240Z",
         "updated_at": "2019-03-04T17:06:36.240Z",
         "type": "customers"
+      },
+      "plan": {
+        "id": 20,
+        "payment_type": "recurring",
+        "name": "Pro Plan",
+        "description": "",
+        "price": 15,
+        "price_in_cents": 1500,
+        "currency": "gbp",
+        "slug": "pro-plan",
+        "billing_interval": "month",
+        "billing_interval_count": 1,
+        "hidden": false,
+        "min_billing_cycles": null,
+        "billing_day": null,
+        "limited_qty": false,
+        "qty": 0,
+        "cancel_after": null,
+        "success_url": "",
+        "trial_period_days": null,
+        "created_at": "2019-04-19T09:02:45.846Z",
+        "updated_at": "2019-04-27T12:05:38.223Z",
+        "type": "plans"
       }
     }
   ],
