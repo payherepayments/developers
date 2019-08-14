@@ -43,7 +43,7 @@ class Footer extends React.Component {
             <a href={this.docUrl('embed-sdk.html')}>
               Embed SDK
             </a>
-            <a href={this.docUrl('api.html')}>
+            <a href={this.docUrl('api-auth.html')}>
               API Reference
             </a>
           </div>
@@ -59,7 +59,7 @@ class Footer extends React.Component {
           </div>
           <div>
             <h5>More</h5>
-            <a href="https://medium.com/payhere">Our Blog</a>
+            <a href="https://payhere.co/blog">Our Blog</a>
             <a href="https://github.com/payherepayments">GitHub</a>
             <a
               href="https://twitter.com/payherepayments"
