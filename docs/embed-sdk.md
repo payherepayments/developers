@@ -64,6 +64,9 @@ PayHere.launch({
   },
   onFailure: function(error) {
     //
+  },
+  onClose: function() {
+    //
   }
 })
 ```
@@ -82,3 +85,4 @@ PayHere.launch({
       error: "Card declined"
     }
     ```
+- **onClose** - optional callback - called when payment form is closed
