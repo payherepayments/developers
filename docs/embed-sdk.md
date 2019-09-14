@@ -54,12 +54,12 @@ One other thing to bear in mind, you can have multiple plans on your page, for t
 This more advanced integration will allow success and failure callbacks and support more options than the payment buttons above.
 
 ```js
-Payhere.launch({
+PayHere.launch({
   embedURL: "https://payhere.co/altlabs/buy/coffee",
   customerName: "Pete Hawkins",
   customerEmail: "pete@example.org",
   disableCustomer: "yes",
-  onSuccess: function(payment) {
+  onSuccess: function({ customerName, customerEmail, quantityPurchased, requiresFurtherAuthentication, plan: { id, name }, paymentAmount }) {
     //
   },
   onFailure: function(error) {
@@ -74,7 +74,7 @@ Payhere.launch({
 - **customerName** - optional name to prefill customer info
 - **customerEmail** - optional email to prefill customer info
 - **disableCustomer** - optionally disable the customer fields so they can't be edited, set this to `"yes"` to disable
-- **onSuccess** - optional callback - returns a [Payment, see the payment API for schema](api-payment-show.md).
+- **onSuccess** - optional callback - returns a payment info.
 - **onFailure** - optional callback - returns an error
 
     ```json
