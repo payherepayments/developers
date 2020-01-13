@@ -56,9 +56,17 @@ This more advanced integration will allow success and failure callbacks and supp
 ```js
 PayHere.launch({
   embedURL: "https://payhere.co/altlabs/buy/coffee",
-  customerName: "Pete Hawkins",
-  customerEmail: "pete@example.org",
-  disableCustomer: "yes",
+  customerName: "Pete Hawkins", // optional
+  customerEmail: "pete@example.org", // optional
+  disableCustomer: "yes", // optional
+  amountInCents: 4000, // optional
+  hideAmount: "yes", // optional
+  customFields: {
+    street_address: "14 Anystreet",
+    town: "Anytown",
+    postcode: "A1 1AB",
+    size: "XL",
+  }, // optional
   onSuccess: function({ customerName, customerEmail, quantityPurchased, requiresFurtherAuthentication, plan: { id, name }, paymentAmount }) {
     //
   },
@@ -77,7 +85,10 @@ PayHere.launch({
 - **customerName** - optional name to prefill customer info
 - **customerEmail** - optional email to prefill customer info
 - **disableCustomer** - optionally disable the customer fields so they can't be edited, set this to `"yes"` to disable
-- **onSuccess** - optional callback - returns a payment info.
+- **amountInCents** - optionally pass in the price for a plan setup as "Customer sets price (donation)"
+- **hideAmount** - optionally when passing "amountInCents" option you can hide the price selection from the end user to fix it to the price you have set
+- **customFields** - optionally pass in set values for custom fields
+- **onSuccess** - optional callback - returns a payment info
 - **onFailure** - optional callback - returns an error
 
     ```json
@@ -86,3 +97,16 @@ PayHere.launch({
     }
     ```
 - **onClose** - optional callback - called when payment form is closed
+
+### Custom fields
+
+When passing custom fields the key will be a lowercased version of the label, with spaces replaced by '_'. I.e. if you have a custom field called 'House number' and 'Postcode' you will pass their values as follows:
+
+```
+customFields: {
+  house_number: "42",
+  postcode: "BT1 1AB"
+}
+```
+
+ If you have marked custom fields as 'hidden' you can still pass the values in using the embed SDK, this allows you to pass hidden metadata.
