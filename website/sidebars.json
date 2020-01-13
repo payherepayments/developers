@@ -1,6 +1,6 @@
 {
   "docs": {
-    "Overview": ["intro"],
+    "Overview": ["intro", "testing"],
     "Integrations": ["link", "embed-sdk", "webhooks"],
     "API": ["api-auth"],
     "/api": [
