@@ -12,13 +12,43 @@ The most basic way to get started with Payhere is by emailing your customers a l
 
 [Read more](link.md)
 
-## Embed SDK
+## Simple embed
 
-Our embed SDK is the next level up, but it still only requires two lines of code
+Our simple embed is the next level up, but it still only requires two lines of code
 
 ```html
 <button data-payhere-embed="https://payhere.co/altlabs/buy/coffee">Payhere</button>
 <script src="https://payhere.co/embed/embed.js"></script>
+```
+
+## Using with React
+
+We have a react plugin available, we think it’s the easiest way to collect one-off and recurring payments using React.
+
+```jsx
+<Payhere
+  selector="#payhere-modal"
+  embedURL={"https://payhere.co/altlabs/coffee"}
+  open={true}
+  onSuccess={() => {}}
+  onFailure={() => {}}
+  onClose={() => {}}
+/>
+```
+
+[Read more](react-sdk.md)
+
+## JavaScript Embed SDK
+
+Our JavaScript embed SDK allows advanced integrations in all frameworks.
+
+```js
+Payhere.launch({
+  embedURL: "https://payhere.co/altlabs/coffee",
+  onSuccess: () => {},
+  onFailure: () => {},
+  onClose: () => {}
+})
 ```
 
 [Read more](embed-sdk.md)
