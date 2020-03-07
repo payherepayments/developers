@@ -4,6 +4,8 @@ title: GET /api/v1/user
 sidebar_label: GET /
 ---
 
+Fetch info on the currently authenticated user
+
 ## Request
 
 <!--DOCUSAURUS_CODE_TABS-->

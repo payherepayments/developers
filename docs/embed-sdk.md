@@ -10,7 +10,7 @@ This more advanced integration will allow success and failure callbacks and supp
 
 ```js
 PayHere.launch({
-  embedURL: "https://payhere.co/altlabs/buy/coffee",
+  embedURL: "https://app.payhere.co/altlabs/buy/coffee",
   customerName: "Pete Hawkins", // optional
   customerEmail: "pete@example.org", // optional
   disableCustomer: "yes", // optional

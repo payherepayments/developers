@@ -44,7 +44,7 @@ const SubscriptionPage = () => {
 
       <Payhere
         selector="#payhere-modal"
-        embedURL={"https://payhere.co/altlabs/coffee"}
+        embedURL={"https://app.payhere.co/altlabs/coffee"}
         open={showPayhere}
         onSuccess={data => {
           console.log("Payhere success", data)
@@ -83,7 +83,7 @@ We also provide the option of hiding the amount field in our form, so the end us
 
   // rest of params
   selector="#payhere-modal"
-  embedURL={"https://payhere.co/altlabs/coffee"}
+  embedURL={"https://app.payhere.co/altlabs/coffee"}
   open={showPayhere}
   onSuccess={() => {}}
   onFailure={() => {}}
@@ -105,7 +105,7 @@ This is helpful when you want to match up incoming webhooks to your customer via
 
   // rest of params
   selector="#payhere-modal"
-  embedURL={"https://payhere.co/altlabs/coffee"}
+  embedURL={"https://app.payhere.co/altlabs/coffee"}
   open={showPayhere}
   onSuccess={() => {}}
   onFailure={() => {}}
@@ -126,7 +126,7 @@ Custom fields can be created against your plans, you can either prefill their va
 
   // rest of params
   selector="#payhere-modal"
-  embedURL={"https://payhere.co/altlabs/coffee"}
+  embedURL={"https://app.payhere.co/altlabs/coffee"}
   open={showPayhere}
   onSuccess={() => {}}
   onFailure={() => {}}
