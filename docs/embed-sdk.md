@@ -4,7 +4,24 @@ title: JavaScript Embed SDK
 sidebar_label: Embed SDK
 ---
 
-## JavaScript embed SDK
+## Installation
+
+Firstly make sure to load the embed code on your page.
+
+```html
+<script src="https://payhere.co/embed/embed.js"></script>
+```
+
+Alternatively install via npm.
+
+```sh
+# If using npm
+$ npm install payhere-embed-sdk --save
+# or using yarn
+$ yarn add payhere-embed-sdk
+```
+
+## How it works
 
 This more advanced integration will allow success and failure callbacks and support more options than the payment buttons above. [See a complete example](https://gist.github.com/phawk/1fcea088772c7249617654c0a226463c)
 
