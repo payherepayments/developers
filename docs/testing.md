@@ -10,6 +10,10 @@ If you are integrating payhere with your website or into a platform, it's import
 
 You can sign up for a new payhere account on our [Sandbox](https://sandbox.payhere.co) site. This functions exactly the same as our live site apart from using test card numbers. You will have to connect your Stripe and GoCardless accounts up again, this will connect in test mode and won't affect your live account.
 
+### Testing adding your bank account
+
+Use test bank account numbers [available here](https://stripe.com/docs/connect/testing).
+
 ### Testing cards
 
 You can use [Stripe's test card numbers](https://stripe.com/docs/testing#cards).

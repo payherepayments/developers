@@ -81,7 +81,10 @@ Triggers upon successful payment, either first time or when recurring payment is
     "company_id": 636211471,
     "created_at": "2018-01-03T00:00:00.000Z",
     "updated_at": "2018-01-03T00:00:00.000Z",
-    "secure_token": "BhuI1f5fuNBEbLFIB8mHUg"
+    "secure_token": "BhuI1f5fuNBEbLFIB8mHUg",
+    "custom_fields": {
+      "address": "123 Anystreet"
+    }
   },
   "customer": {
     "id": 989899294,
@@ -135,7 +138,10 @@ Triggers upon failed payment, either first time or when recurring payment fails.
     "company_id": 636211471,
     "created_at": "2018-01-03T00:00:00.000Z",
     "updated_at": "2018-01-03T00:00:00.000Z",
-    "secure_token": "BhuI1f5fuNBEbLFIB8mHUg"
+    "secure_token": "BhuI1f5fuNBEbLFIB8mHUg",
+    "custom_fields": {
+      "address": "123 Anystreet"
+    }
   },
   "customer": {
     "id": 989899294,

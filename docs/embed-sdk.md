@@ -6,7 +6,7 @@ sidebar_label: Embed SDK
 
 ## JavaScript embed SDK
 
-This more advanced integration will allow success and failure callbacks and support more options than the payment buttons above.
+This more advanced integration will allow success and failure callbacks and support more options than the payment buttons above. [See a complete example](https://gist.github.com/phawk/1fcea088772c7249617654c0a226463c)
 
 ```js
 PayHere.launch({
