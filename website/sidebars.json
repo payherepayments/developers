@@ -8,7 +8,9 @@
         "type": "subcategory",
         "label": "/v1/current_company",
         "ids": [
-          "api-current-company-show"
+          "api-current-company-show",
+          "api-current-company-update",
+          "api-current-company-stats"
         ]
       },
       {
