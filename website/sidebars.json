@@ -6,6 +6,13 @@
     "/api": [
       {
         "type": "subcategory",
+        "label": "/v1/current_company",
+        "ids": [
+          "api-current-company-show"
+        ]
+      },
+      {
+        "type": "subcategory",
         "label": "/v1/customers",
         "ids": [
           "api-customers",
