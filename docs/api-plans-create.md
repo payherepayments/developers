@@ -35,7 +35,7 @@ parsed = JSON.parse(resp.body)
 - **name** - Display name of the plan
 - **description** - Description of the product/service, displayed to end customer
 - **price** - Set the price of the plan, leave empty for donations.
-- **currency** - 3 letter currency code for the plan i.e. "USD", "GBP", "EUR"
+- **currency** - 3 letter currency code for the plan i.e. "usd", "gbp", "eur"
 - **receipt_text** - Custom message to be added to the email receipt
 - **hidden** - Hide this plan from your payments landing page
 - **success_url** - URL to redirect customer to after successful payment

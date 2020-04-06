@@ -41,7 +41,7 @@ parsed = JSON.parse(resp.body)
 #### Params only applicable to one-off plans:
 
 - **price** - Set the price of the plan
-- **currency** - 3 letter currency code for the plan i.e. "USD", "GBP", "EUR"
+- **currency** - 3 letter currency code for the plan i.e. "usd", "gbp", "eur"
 - **show_qty** - Show a quantity field on payment form, allowing customers to purchase more than one.
 
 #### Params only applicable to subscription plans:
