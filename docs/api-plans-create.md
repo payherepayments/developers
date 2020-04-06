@@ -30,7 +30,7 @@ parsed = JSON.parse(resp.body)
 
 ### Params
 
-- **payment_type** - One of: "recurring", "one_off"
+- **payment_type** - One of "recurring" or "one_off"
 - **user_selects_amount** - Set to true for donations
 - **name** - Display name of the plan
 - **description** - Description of the product/service, displayed to end customer
