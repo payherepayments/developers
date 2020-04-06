@@ -11,7 +11,7 @@ Create a new plan.
 <!--DOCUSAURUS_CODE_TABS-->
 <!--Curl-->
 ```sh
-$ curl -X PUT https://api.payhere.co/api/v1/plans/:id \
+$ curl -X POST https://api.payhere.co/api/v1/plans \
        -H "Accept: application/json" \
        -H "Authorization: Bearer ${api_key_here}"
        -d '{"name": "New name"}'
@@ -22,7 +22,7 @@ require "http"
 require "json"
 
 resp = HTTP.auth("Bearer #{api_key_here}")
-           .put("https://api.payhere.co/api/v1/plans/:id", json: { name: "New name" })
+           .post("https://api.payhere.co/api/v1/plans", json: { name: "New name" })
 
 parsed = JSON.parse(resp.body)
 ```
