@@ -31,6 +31,15 @@
       },
       {
         "type": "subcategory",
+        "label": "/v1/plans",
+        "ids": [
+          "api-plans",
+          "api-plans-create",
+          "api-plans-update"
+        ]
+      },
+      {
+        "type": "subcategory",
         "label": "/v1/refunds",
         "ids": [
           "api-refunds"
