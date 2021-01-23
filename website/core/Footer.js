@@ -5,20 +5,20 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-const React = require('react');
+const React = require("react");
 
 class Footer extends React.Component {
   docUrl(doc, language) {
     const baseUrl = this.props.config.baseUrl;
     const docsUrl = this.props.config.docsUrl;
-    const docsPart = `${docsUrl ? `${docsUrl}/` : ''}`;
-    const langPart = `${language ? `${language}/` : ''}`;
+    const docsPart = `${docsUrl ? `${docsUrl}/` : ""}`;
+    const langPart = `${language ? `${language}/` : ""}`;
     return `${baseUrl}${docsPart}${langPart}${doc}`;
   }
 
   pageUrl(doc, language) {
     const baseUrl = this.props.config.baseUrl;
-    return baseUrl + (language ? `${language}/` : '') + doc;
+    return baseUrl + (language ? `${language}/` : "") + doc;
   }
 
   render() {
@@ -37,34 +37,25 @@ class Footer extends React.Component {
           </a>
           <div>
             <h5>Docs</h5>
-            <a href={this.docUrl('intro.html')}>
-              Getting Started
-            </a>
-            <a href={this.docUrl('embed-sdk.html')}>
-              Embed SDK
-            </a>
-            <a href={this.docUrl('api-auth.html')}>
-              API Reference
-            </a>
+            <a href={this.docUrl("intro.html")}>Getting Started</a>
+            <a href={this.docUrl("embed-sdk.html")}>Embed SDK</a>
+            <a href={this.docUrl("api-auth.html")}>API Reference</a>
           </div>
           <div>
             <h5>Payhere</h5>
-            <a href={this.pageUrl('help.html')}>
-              Help
-            </a>
-            <a href="https://payhere.co/signups/new">
-              Signup free
-            </a>
-            <a href="https://payhere.co/">Features</a>
+            <a href={this.pageUrl("help.html")}>Help</a>
+            <a href="https://app.payhere.co/signups/new">Signup free</a>
+            <a href="https://payhere.co/features/">Features</a>
           </div>
           <div>
             <h5>More</h5>
-            <a href="https://payhere.co/blog">Our Blog</a>
+            <a href="https://payhere.co/blog/">Our Blog</a>
             <a href="https://github.com/payherepayments">GitHub</a>
             <a
               href="https://twitter.com/payherepayments"
               target="_blank"
-              rel="noreferrer noopener">
+              rel="noreferrer noopener"
+            >
               Twitter
             </a>
           </div>
