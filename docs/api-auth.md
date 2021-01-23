@@ -6,7 +6,7 @@ sidebar_label: Authentication
 
 Our API is secured by API keys, please make sure you **don’t share these keys** with anyone! They should only be used in a secure server side environment, our API isn't supported for use in the browser, [see our Embed SDK](embed-sdk.md) instead.
 
-**You can [find your API](https://payhere.co/merchants/integrations) key in the integrations section of the merchants admin.**
+**You can [find your API](https://app.payhere.co/merchants/integrations) key in the integrations section of the merchants admin.**
 
 ---
 
