@@ -26,6 +26,10 @@ $ yarn add payhere-embed-sdk
 This more advanced integration will allow success and failure callbacks and support more options than the payment buttons above. [See a complete example](https://gist.github.com/phawk/1fcea088772c7249617654c0a226463c)
 
 ```js
+// If using npm package
+import "payhere-embed-sdk/dist/embed.css"
+import Payhere from "payhere-embed-sdk/dist/embed"
+
 PayHere.launch({
   embedURL: "https://app.payhere.co/altlabs/buy/coffee",
   customerName: "Pete Hawkins", // optional
