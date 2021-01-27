@@ -32,7 +32,7 @@ function Help(props) {
     },
     {
       content:
-        "Ask questions about the documentation and integrations using intercom messenger in your [merchant admin](https://app.payhere.co/merchants)",
+        "Ask questions about the documentation and integrations using intercom messenger in your [merchant admin](https://app.payhere.co/users/sign_in)",
       title: "Have a question",
     },
   ];

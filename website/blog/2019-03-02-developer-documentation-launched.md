@@ -10,7 +10,7 @@ Our big launch has had many of you signup and start using Payhere in really cool
 
 We'll be updating this site frequently over the next few weeks as we release our Embed SDK v2, move our API from private beta to public beta and mostly as we implement all the great feedback you give us.
 
-Thanks for taking the time to check it out and as always let us know if you have any questions or feedback. Intercom messenger on the [main site](https://payhere.co) is the best way to get in touch.
+Thanks for taking the time to check it out and as always let us know if you have any questions or feedback. Our contact form on the [main site](https://payhere.co/contact/) is the best way to get in touch.
 
 Thanks,
 Pete and the Payhere team

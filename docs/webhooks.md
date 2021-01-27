@@ -7,7 +7,7 @@ Webhooks allow us to securely communicate with your backend platform and offer t
 
 ## Verifying webhooks are legitimate
 
-First things first, we sign all of our webhooks with a shared secret, you can find yours in the [merchants admin](https://api.payhere.co/merchants/integrations).
+First things first, we sign all of our webhooks with a shared secret, you can find yours in the [merchants admin](https://app.payhere.co/merchants/integrations).
 
 Our example below is in Ruby, the first step to receiving webhooks is to verify that they came from Payhere, you can do that by generating an HMAC digest of the entire request body and signing it with the shared secret you got above. If these don't match up we can return an HTTP unauthorized code.
 
