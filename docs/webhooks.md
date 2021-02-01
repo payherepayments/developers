@@ -52,6 +52,9 @@ def create
   when "payment.failed"
     user = find_or_create_user
     SlackNotifierJob.perform_async("#{user.name} (#{user.email}) payment of #{payment.amount} failed!")
+  when "subscription.cancelled"
+    user = find_or_create_user
+    SlackNotifierJob.perform_async("#{user.name} (#{user.email}) cancelled their subscription!")
   else
     # no-op
   end
@@ -96,12 +99,12 @@ Triggers upon successful payment, either first time or when recurring payment is
     "ip_address": null,
     "updated_at": "2019-03-02T11:51:28.640Z"
   },
-  "membership_plan": {
+  "plan": {
     "id": 372786875,
     "qty": 0,
     "name": "Void Pro Subscription",
     "slug": "void-pro-subscription",
-    "type": "membership_plans",
+    "type": "plans",
     "price": 24.99,
     "hidden": false,
     "currency": "gbp",
@@ -153,12 +156,12 @@ Triggers upon failed payment, either first time or when recurring payment fails.
     "ip_address": null,
     "updated_at": "2019-03-02T11:51:28.640Z"
   },
-  "membership_plan": {
+  "plan": {
     "id": 372786875,
     "qty": 0,
     "name": "Void Pro Subscription",
     "slug": "void-pro-subscription",
-    "type": "membership_plans",
+    "type": "plans",
     "price": 24.99,
     "hidden": false,
     "currency": "gbp",
@@ -174,9 +177,62 @@ Triggers upon failed payment, either first time or when recurring payment fails.
 }
 ```
 
-### Coming soon
+### subscription.cancelled
 
-- subscription.created
-- subscription.cancelled
+Triggers when a customer cancels their subscription, or is cancelled automatically as a result of failed payments.
+
+#### Example response body
+
+```json
+{
+  "event": "subscription.cancelled",
+  "subscription": {
+    "id": 5681,
+    "type": "subscriptions",
+    "customer_id": 989899294,
+    "last_charged": "2018-01-03T00:00:00.000Z",
+    "next_charge_at": "2018-01-03T00:00:00.000Z",
+    "status": "cancelled",
+    "stripe_subscription_id": "sub_23423re",
+    "stripe_plan_id": "pl_23423re",
+    "billing_interval": "month",
+    "billing_interval_count": 1,
+    "min_billing_cycles": null,
+    "plan_id": 372786875,
+    "provider": "stripe",
+    "created_at": "2018-01-03T00:00:00.000Z",
+    "updated_at": "2018-01-03T00:00:00.000Z",
+    "metadata": {}
+  },
+  "customer": {
+    "id": 989899294,
+    "name": "Geoff Williams",
+    "type": "customers",
+    "email": "g.williams01@example.org",
+    "location": {},
+    "created_at": "2019-03-02T11:51:28.640Z",
+    "ip_address": null,
+    "updated_at": "2019-03-02T11:51:28.640Z"
+  },
+  "plan": {
+    "id": 372786875,
+    "qty": 0,
+    "name": "Void Pro Subscription",
+    "slug": "void-pro-subscription",
+    "type": "plans",
+    "price": 24.99,
+    "hidden": false,
+    "currency": "gbp",
+    "created_at": "2019-03-02T11:51:28.700Z",
+    "updated_at": "2019-03-02T11:51:28.852Z",
+    "description": "Annual subscription to Void pro",
+    "limited_qty": false,
+    "price_in_cents": 2499,
+    "billing_interval": "year",
+    "min_billing_cycles": 1,
+    "billing_interval_count": 1
+  }
+}
+```
 
 Let us know if you need any additional event types and we'll strongly consider adding them.
