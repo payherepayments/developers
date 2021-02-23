@@ -13,3 +13,11 @@ The easiest way to use Payhere is simply to copy the URL to your payment form an
 Once you have this setup you can start receiving payments, and even [use our webhooks](webhooks.md) to integrate further with your own system or website.
 
 For more seamless integrations see our [Embed SDK](embed-sdk.md).
+
+## Custom fields
+
+You can pass custom fields to your Payment Links through URL query parameters. If you have a custom field called `User ID` you would pass the query param `custom_field_user_id=42` as follows
+
+```text
+https://sandbox.payhere.co/your-co/payment-link-name?custom_field_user_id=42
+```
