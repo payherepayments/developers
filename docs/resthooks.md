@@ -35,7 +35,7 @@ parsed = JSON.parse(resp.body)
 
 ### Params
 
-- **resource** - The event to listen for, one of: `payment_received`, `subscription_cancelled`
+- **resource** - The event to listen for, one of: `payment_received`, `subscription_cancelled`, `subscription_created`
 - **post_url** - Endpoint on your platform to receive POST requests when REST hooks send
 - **integration** - Friendly name of your platform, helps us with metrics and debugging.
 
