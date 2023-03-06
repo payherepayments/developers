@@ -61,6 +61,6 @@ Webhooks provide a secure way for us to communicate payment and customer informa
 
 ## API
 
-Currently in public beta, use our API to build advanced integrations.
+Use our API to build advanced integrations.
 
 [Read more](api-auth.md)
