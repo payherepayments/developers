@@ -45,3 +45,5 @@ Now any Payhere links that you setup using the previous guide will open embedded
   });
 </script>
 ```
+
+![Wix subscription payment example](/img/docs/wix-embed.gif)
