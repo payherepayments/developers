@@ -1,7 +1,7 @@
 {
   "docs": {
     "Overview": ["intro", "testing"],
-    "Integrations": ["link", "payment-button-js", "react-sdk", "embed-sdk", "webhooks", "resthooks"],
+    "Integrations": ["link", "payment-button-js", "react-sdk", "embed-sdk", "webhooks", "resthooks", "wix-embed-sdk"],
     "API": ["api-auth"],
     "/api": [
       {
