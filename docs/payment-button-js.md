@@ -14,7 +14,7 @@ This code is very straightforward:
 
 ```html
 <button data-payhere-embed="https://app.payhere.co/altlabs/coffee">Payhere</button>
-<script src="https://payhere.co/embed/embed.js"></script>
+<script src="https://app.payhere.co/embed/embed.js"></script>
 ```
 
 ### Additional parameters available
@@ -35,7 +35,7 @@ A complete example:
 >
   Buy me a coffee
 </button>
-<script src="https://payhere.co/embed/embed.js"></script>
+<script src="https://app.payhere.co/embed/embed.js"></script>
 ```
 
 ### Multiple plans per page
@@ -46,5 +46,5 @@ One other thing to bear in mind, you can have multiple plans on your page, for t
 <button data-payhere-embed="https://app.payhere.co/altlabs/coffee">Buy me an americano</button>
 <button data-payhere-embed="https://app.payhere.co/altlabs/coffee-flat-white">Buy me a flat white</button>
 <button data-payhere-embed="https://app.payhere.co/altlabs/coffee-late">Buy me a latte</button>
-<script src="https://payhere.co/embed/embed.js"></script>
+<script src="https://app.payhere.co/embed/embed.js"></script>
 ```
