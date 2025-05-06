@@ -18,7 +18,7 @@ Our simple embed is the next level up, but it still only requires two lines of c
 
 ```html
 <button data-payhere-embed="https://app.payhere.co/altlabs/coffee">Payhere</button>
-<script src="https://payhere.co/embed/embed.js"></script>
+<script src="https://app.payhere.co/embed/embed.js"></script>
 ```
 
 ## Using with React

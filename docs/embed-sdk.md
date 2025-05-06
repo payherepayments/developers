@@ -9,7 +9,7 @@ sidebar_label: Embed SDK
 Firstly make sure to load the embed code on your page.
 
 ```html
-<script src="https://payhere.co/embed/embed.js"></script>
+<script src="https://app.payhere.co/embed/embed.js"></script>
 ```
 
 Alternatively install via npm.
