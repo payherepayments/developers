@@ -30,7 +30,8 @@ https://sandbox.payhere.co/your-co/payment-link-name?amount_in_cents=4200&hide_a
 - `customer_email` - To pre-fill the customer's email address
 - `disable_customer_fields` - Set this to 'yes' to disable the customer fields so they can't make changes
 - `amount_in_cents` - The amount to charge the customer in cents (make sure your plan is set to donation)
-- `hide_amount` - Set this to 'yes' to hide the user editable amount section (useful if you are treating the payment link like a basket and passing your own `amount_in_cents`).
+- `hide_amount` - Set this to 'yes' to hide the user editable amount section (useful if you are treating the payment link like a basket and passing your own `amount_in_cents`)
+- `coupon_code` - Apply a coupon code to the payment (e.g. `coupon_code=CODEEEE`).
 
 To use your Payhere payment link like a shopping basket, set it up like the example below and make sure to pass whatever `amount_in_cents` you calculate on your site.
 
