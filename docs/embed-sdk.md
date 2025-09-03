@@ -31,7 +31,7 @@ import "payhere-embed-sdk/dist/embed.css"
 import Payhere from "payhere-embed-sdk/dist/embed"
 
 PayHere.launch({
-  embedURL: "https://app.payhere.co/altlabs/buy/coffee",
+  embedURL: "https://sandbox.payhere.co/altlabs/coffee",
   customerName: "Pete Hawkins", // optional
   customerEmail: "pete@example.org", // optional
   disableCustomer: "yes", // optional

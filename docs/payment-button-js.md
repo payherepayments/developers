@@ -13,7 +13,7 @@ We try to make getting setup with Payhere as easy as possible, that's why you ca
 This code is very straightforward:
 
 ```html
-<button data-payhere-embed="https://app.payhere.co/altlabs/coffee">Payhere</button>
+<button data-payhere-embed="https://sandbox.payhere.co/altlabs/coffee">Payhere</button>
 <script src="https://payhere.co/embed/embed.js"></script>
 ```
 
@@ -28,7 +28,7 @@ A complete example:
 
 ```html
 <button
-  data-payhere-embed="https://app.payhere.co/altlabs/coffee"
+  data-payhere-embed="https://sandbox.payhere.co/altlabs/coffee"
   data-payhere-customer-name="Pete Hawkins"
   data-payhere-customer-email="pete@example.org"
   data-payhere-disable-customer="yes"
@@ -43,8 +43,8 @@ A complete example:
 One other thing to bear in mind, you can have multiple plans on your page, for this you'll only need to include the embed code once.
 
 ```html
-<button data-payhere-embed="https://app.payhere.co/altlabs/coffee">Buy me an americano</button>
-<button data-payhere-embed="https://app.payhere.co/altlabs/coffee-flat-white">Buy me a flat white</button>
-<button data-payhere-embed="https://app.payhere.co/altlabs/coffee-late">Buy me a latte</button>
+<button data-payhere-embed="https://sandbox.payhere.co/altlabs/coffee">Buy me an americano</button>
+<button data-payhere-embed="https://sandbox.payhere.co/altlabs/coffee-flat-white">Buy me a flat white</button>
+<button data-payhere-embed="https://sandbox.payhere.co/altlabs/coffee-late">Buy me a latte</button>
 <script src="https://payhere.co/embed/embed.js"></script>
 ```
