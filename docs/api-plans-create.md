@@ -46,6 +46,13 @@ parsed = JSON.parse(resp.body)
 
 - **show_qty** - Show a quantity field on payment form, allowing customers to purchase more than one.
 
+##### Digital downloads
+
+- **digital_download** - Set to `true` to enable digital downloads for this payment link (file or external URL).
+- **download_type** - Either `"upload"` (attach a file with the request) or `"url"` (use an external download URL).
+- **download_file** - The file to deliver when `download_type` is `"upload"`. Must be sent as `multipart/form-data` (ActiveStorage); not available in a JSON-only body.
+- **download_url** - HTTPS URL to the file when `download_type` is `"url"`.
+
 #### Params only applicable to recurring plans:
 
 - **billing_interval** - One of "week", "month" or "year"
@@ -53,6 +60,39 @@ parsed = JSON.parse(resp.body)
 - **min_billing_cycles** - Customer cannot cancel this plan through Payhere until N payments have been made.
 - **billing_day** - Day of the month to charge customer
 - **cancel_after** - Cancel plan automatically after N payments.
+
+### Digital downloads
+
+For one-off plans you can create a payment link that delivers a digital product either by uploading a file or by pointing to an external URL.
+
+**File upload** — use `multipart/form-data` and field `download_file`:
+
+```sh
+curl -X POST https://api.payhere.co/api/v1/plans \
+  -H "Accept: application/json" \
+  -H "Authorization: Bearer ${api_key_here}" \
+  -F "payment_type=one_off" \
+  -F "name=My Ebook" \
+  -F "price=15" \
+  -F "currency=gbp" \
+  -F "digital_download=true" \
+  -F "download_type=upload" \
+  -F "download_file=@/path/to/your-file.pdf"
+```
+
+**External URL** — send JSON (or form fields) including `download_url`:
+
+```json
+{
+  "payment_type": "one_off",
+  "name": "External Download",
+  "price": 10,
+  "currency": "gbp",
+  "digital_download": true,
+  "download_type": "url",
+  "download_url": "https://example.com/file.zip"
+}
+```
 
 ## Response
 
