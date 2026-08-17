@@ -53,7 +53,8 @@ const config = {
         title: "Developers",
         logo: {
           alt: "Payhere",
-          src: "img/payhere-white-stamp.svg",
+          src: "img/payhere-blue.svg",
+          srcDark: "img/payhere-white-stamp.svg",
         },
         items: [
           { to: "/docs/intro", label: "Docs", position: "left" },
