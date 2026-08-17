@@ -4,19 +4,26 @@ title: PUT /api/v1/plans/:id
 sidebar_label: PUT /:id
 ---
 
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
 Update a plan.
 
 ## Request
 
-<!--DOCUSAURUS_CODE_TABS-->
-<!--Curl-->
+<Tabs>
+<TabItem value="curl" label="Curl">
+
 ```sh
 $ curl -X PUT https://api.payhere.co/api/v1/plans/:id \
        -H "Accept: application/json" \
        -H "Authorization: Bearer ${api_key_here}"
        -d '{"name": "New name"}'
 ```
-<!--Ruby-->
+
+</TabItem>
+<TabItem value="ruby" label="Ruby">
+
 ```ruby
 require "http"
 require "json"
@@ -26,7 +33,9 @@ resp = HTTP.auth("Bearer #{api_key_here}")
 
 parsed = JSON.parse(resp.body)
 ```
-<!--END_DOCUSAURUS_CODE_TABS-->
+
+</TabItem>
+</Tabs>
 
 ### Params
 

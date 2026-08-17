@@ -4,6 +4,9 @@ title: API Authentication
 sidebar_label: Authentication
 ---
 
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
 Our API is secured by API keys, please make sure you **don’t share these keys** with anyone! They should only be used in a secure server side environment, our API isn't supported for use in the browser, [see our Embed SDK](embed-sdk.md) instead.
 
 **You can [find your API](https://app.payhere.co/merchants/integrations) key in the integrations section of the merchants admin.**
@@ -14,12 +17,16 @@ Our API is secured by API keys, please make sure you **don’t share these keys*
 
 We recommend passing your API key in the Authorization header, like so:
 
-<!--DOCUSAURUS_CODE_TABS-->
-<!--Curl-->
+<Tabs>
+<TabItem value="curl" label="Curl">
+
 ```sh
 $ curl -X GET https://api.payhere.co/api/v1/user -H "Authorization: Bearer ${api_key_here}"
 ```
-<!--Ruby-->
+
+</TabItem>
+<TabItem value="ruby" label="Ruby">
+
 ```ruby
 require "http"
 require "json"
@@ -30,7 +37,9 @@ raw_json = HTTP.auth("Bearer #{api_key_here}")
 
 json = JSON.parse(raw_json)
 ```
-<!--END_DOCUSAURUS_CODE_TABS-->
+
+</TabItem>
+</Tabs>
 
 
 ### access_token parameter

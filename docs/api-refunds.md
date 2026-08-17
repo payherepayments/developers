@@ -4,12 +4,16 @@ title: POST /api/v1/refunds
 sidebar_label: POST /
 ---
 
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
 This will refund a customer the amount specified, can be a partial refund.
 
 ## Request
 
-<!--DOCUSAURUS_CODE_TABS-->
-<!--Curl-->
+<Tabs>
+<TabItem value="curl" label="Curl">
+
 ```sh
 $ curl -X POST https://api.payhere.co/api/v1/refunds \
        -H "Accept: application/json" \
@@ -17,7 +21,10 @@ $ curl -X POST https://api.payhere.co/api/v1/refunds \
        -H "Authorization: Bearer ${api_key_here}" \
        -d '{"payment_id": 373, "amount": 0.5, "reason": "requested_by_customer"}'
 ```
-<!--Ruby-->
+
+</TabItem>
+<TabItem value="ruby" label="Ruby">
+
 ```ruby
 require "http"
 require "json"
@@ -32,7 +39,9 @@ resp = HTTP.auth("Bearer #{api_key_here}")
 
 success = resp.status == 204
 ```
-<!--END_DOCUSAURUS_CODE_TABS-->
+
+</TabItem>
+</Tabs>
 
 ### Params
 

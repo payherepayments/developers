@@ -3,6 +3,9 @@ id: resthooks
 title: REST Hooks
 ---
 
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
 If you are integrating Payhere to your own website, [Webhooks](/docs/webhooks) are probably what you are after.
 
 REST Hooks give a bit more control to platforms such as Zapier to subscribe and unsubscribe different *listeners* to webhook endpoints.
@@ -13,15 +16,19 @@ If you are building a platform integration [please reach out to us](mailto:suppo
 
 In order to start receiving REST hooks, you first need to subscribe to a resource or event for a given Company. Follow our [API authentication guide](/docs/api-auth) to provide an API token.
 
-<!--DOCUSAURUS_CODE_TABS-->
-<!--Curl-->
+<Tabs>
+<TabItem value="curl" label="Curl">
+
 ```sh
 $ curl -X POST https://api.payhere.co/api/v1/hooks \
        -H "Accept: application/json" \
        -H "Authorization: Bearer ${api_key_here}"
        -d '{"resource": "payment_received", "post_url": "https://mycool.app/resthooks", "integration": "mycool.app"}'
 ```
-<!--Ruby-->
+
+</TabItem>
+<TabItem value="ruby" label="Ruby">
+
 ```ruby
 require "http"
 require "json"
@@ -31,7 +38,9 @@ resp = HTTP.auth("Bearer #{api_key_here}")
 
 parsed = JSON.parse(resp.body)
 ```
-<!--END_DOCUSAURUS_CODE_TABS-->
+
+</TabItem>
+</Tabs>
 
 ### Params
 
@@ -63,14 +72,18 @@ parsed = JSON.parse(resp.body)
 
 ## List all active REST hooks
 
-<!--DOCUSAURUS_CODE_TABS-->
-<!--Curl-->
+<Tabs>
+<TabItem value="curl" label="Curl">
+
 ```sh
 $ curl -X GET https://api.payhere.co/api/v1/hooks \
        -H "Accept: application/json" \
        -H "Authorization: Bearer ${api_key_here}"
 ```
-<!--Ruby-->
+
+</TabItem>
+<TabItem value="ruby" label="Ruby">
+
 ```ruby
 require "http"
 require "json"
@@ -80,7 +93,9 @@ resp = HTTP.auth("Bearer #{api_key_here}")
 
 parsed = JSON.parse(resp.body)
 ```
-<!--END_DOCUSAURUS_CODE_TABS-->
+
+</TabItem>
+</Tabs>
 
 ### Response
 
@@ -109,14 +124,18 @@ parsed = JSON.parse(resp.body)
 
 When you are done receiving events you can cleanup the listener by unsubscribing.
 
-<!--DOCUSAURUS_CODE_TABS-->
-<!--Curl-->
+<Tabs>
+<TabItem value="curl" label="Curl">
+
 ```sh
 $ curl -X DELETE https://api.payhere.co/api/v1/hooks/:id \
        -H "Accept: application/json" \
        -H "Authorization: Bearer ${api_key_here}"
 ```
-<!--Ruby-->
+
+</TabItem>
+<TabItem value="ruby" label="Ruby">
+
 ```ruby
 require "http"
 require "json"
@@ -128,7 +147,9 @@ if resp.status == 204
   # successfully unsubscribed
 end
 ```
-<!--END_DOCUSAURUS_CODE_TABS-->
+
+</TabItem>
+</Tabs>
 
 ### URL Params
 

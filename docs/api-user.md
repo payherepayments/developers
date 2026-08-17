@@ -4,16 +4,23 @@ title: GET /api/v1/user
 sidebar_label: GET /
 ---
 
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
 Fetch info on the currently authenticated user
 
 ## Request
 
-<!--DOCUSAURUS_CODE_TABS-->
-<!--Curl-->
+<Tabs>
+<TabItem value="curl" label="Curl">
+
 ```sh
 $ curl -X GET https://api.payhere.co/api/v1/user -H "Authorization: Bearer ${api_key_here}"
 ```
-<!--Ruby-->
+
+</TabItem>
+<TabItem value="ruby" label="Ruby">
+
 ```ruby
 require "http"
 require "json"
@@ -24,7 +31,9 @@ raw_json = HTTP.auth("Bearer #{api_key_here}")
 
 json = JSON.parse(raw_json)
 ```
-<!--END_DOCUSAURUS_CODE_TABS-->
+
+</TabItem>
+</Tabs>
 
 ## Response
 
