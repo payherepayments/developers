@@ -4,18 +4,25 @@ title: GET /api/v1/customers/:id
 sidebar_label: GET /:id
 ---
 
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
 Fetch a customer by ID, this will also pull down their subscriptions and payment history.
 
 ## Request
 
-<!--DOCUSAURUS_CODE_TABS-->
-<!--Curl-->
+<Tabs>
+<TabItem value="curl" label="Curl">
+
 ```sh
 $ curl -X GET https://api.payhere.co/api/v1/customers/:id \
        -H "Accept: application/json" \
        -H "Authorization: Bearer ${api_key_here}"
 ```
-<!--Ruby-->
+
+</TabItem>
+<TabItem value="ruby" label="Ruby">
+
 ```ruby
 require "http"
 require "json"
@@ -25,7 +32,9 @@ resp = HTTP.auth("Bearer #{api_key_here}")
 
 parsed = JSON.parse(resp.body)
 ```
-<!--END_DOCUSAURUS_CODE_TABS-->
+
+</TabItem>
+</Tabs>
 
 ### Params
 

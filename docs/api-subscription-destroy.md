@@ -4,18 +4,25 @@ title: DELETE /api/v1/subscriptions/:id
 sidebar_label: DELETE /:id
 ---
 
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
 Cancel a subscription immediately so there are no further payments, subscription will remain active until period end.
 
 ## Request
 
-<!--DOCUSAURUS_CODE_TABS-->
-<!--Curl-->
+<Tabs>
+<TabItem value="curl" label="Curl">
+
 ```sh
 $ curl -X DELETE https://api.payhere.co/api/v1/subscriptions/:id \
        -H "Accept: application/json" \
        -H "Authorization: Bearer ${api_key_here}"
 ```
-<!--Ruby-->
+
+</TabItem>
+<TabItem value="ruby" label="Ruby">
+
 ```ruby
 require "http"
 require "json"
@@ -25,7 +32,9 @@ resp = HTTP.auth("Bearer #{api_key_here}")
 
 success = resp.status == 204
 ```
-<!--END_DOCUSAURUS_CODE_TABS-->
+
+</TabItem>
+</Tabs>
 
 ### Params
 
