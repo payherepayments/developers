@@ -1,19 +1,54 @@
 /**
- * Any CSS included here will be global. The classic template
- * bundles Infima by default. Infima is a CSS framework designed to
- * work well for content-centric websites.
+ * Global tokens, sourced from the Payhere Design System (colors,
+ * type, spacing, radii). Infima variables are mapped onto them so
+ * the docs/blog theme inherits the same brand system as the
+ * marketing site.
  */
 
-/* Payhere brand color, ported from the v1 site's siteConfig.js colors. */
 :root {
-  --ifm-color-primary: #004dc9;
-  --ifm-color-primary-dark: #0046b5;
-  --ifm-color-primary-darker: #0042aa;
-  --ifm-color-primary-darkest: #00368c;
-  --ifm-color-primary-light: #0054dd;
-  --ifm-color-primary-lighter: #0058e2;
-  --ifm-color-primary-lightest: #1567ff;
-  --ifm-code-font-size: 95%;
+  /* Brand blue */
+  --ph-blue: #004dc9;
+  --ph-blue-hover: #0a5ce0;
+  --ph-blue-press: #003ea6;
+
+  /* Navy surfaces */
+  --ph-navy-darker: #030a15;
+  --ph-navy: #030d1d;
+  --ph-navy-ink: #081e41;
+
+  /* Neutral ramp */
+  --ph-gray-50: #f9fafb;
+  --ph-gray-100: #f3f4f6;
+  --ph-gray-200: #e5e7eb;
+  --ph-gray-300: #d1d5db;
+  --ph-gray-400: #9ca3af;
+  --ph-gray-500: #6b7280;
+  --ph-gray-600: #4b5563;
+  --ph-gray-700: #374151;
+  --ph-gray-800: #1f2937;
+  --ph-gray-900: #111827;
+
+  /* Radii */
+  --ph-radius-sm: 4px;
+  --ph-radius-md: 6px;
+  --ph-radius-lg: 8px;
+  --ph-radius-xl: 16px;
+
+  --ifm-font-family-base: "Inter", -apple-system, "system-ui", "Segoe UI", Roboto, sans-serif;
+  --ifm-font-family-monospace: "JetBrains Mono", "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  --ifm-heading-font-weight: 700;
+
+  --ifm-color-primary: var(--ph-blue);
+  --ifm-color-primary-dark: var(--ph-blue-press);
+  --ifm-color-primary-darker: #00368c;
+  --ifm-color-primary-darkest: #002a6e;
+  --ifm-color-primary-light: var(--ph-blue-hover);
+  --ifm-color-primary-lighter: #1567ff;
+  --ifm-color-primary-lightest: #4d8bff;
+
+  --ifm-button-border-radius: var(--ph-radius-md);
+  --ifm-card-border-radius: var(--ph-radius-lg);
+  --ifm-code-font-size: 92%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 }
 
@@ -29,70 +64,8 @@
 }
 
 /*
- * Layout classes below port the v1 homepage/help page structure
- * (website/pages/en/{index,help}.js) so those pages keep their
- * v1 look. This is a straight port, not a redesign.
+ * Layout classes used by src/pages/help.js.
  */
-
-.homeContainer {
-  padding: 0;
-}
-
-.homeSplashFade {
-  padding: 4rem 0;
-  text-align: center;
-}
-
-.homeWrapper {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 0 2rem;
-}
-
-.projectTitle {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-  font-weight: 400;
-}
-
-.projectTitle small {
-  font-size: 1.25rem;
-  color: var(--ifm-color-emphasis-700);
-}
-
-.promoSection {
-  margin-top: 2rem;
-}
-
-.promoRow {
-  display: flex;
-  justify-content: center;
-}
-
-.pluginRowBlock {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
-}
-
-.pluginWrapper.buttonWrapper .button {
-  display: inline-block;
-  padding: 0.75rem 1.5rem;
-  border-radius: var(--ifm-button-border-radius);
-  background: var(--ifm-color-primary);
-  color: #fff;
-  font-weight: 600;
-  text-decoration: none;
-}
-
-.pluginWrapper.buttonWrapper .button:hover {
-  background: var(--ifm-color-primary-dark);
-  color: #fff;
-  text-decoration: none;
-}
 
 .docMainWrapper.wrapper {
   max-width: 1100px;
