@@ -263,6 +263,36 @@ table thead tr {
   color: var(--ph-blue-hover);
 }
 
+.footer__links {
+  margin-bottom: 2rem;
+}
+
+.footer__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  text-align: left;
+  margin-top: 0;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer__bottom .margin-bottom--sm {
+  margin-bottom: 0 !important;
+}
+
+.footer__logo {
+  width: 18px;
+  height: auto;
+  opacity: 0.55;
+}
+
+.footer__copyright {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.45);
+}
+
 /*
  * Layout classes used by src/pages/help.js.
  */
