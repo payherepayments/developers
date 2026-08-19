@@ -105,8 +105,10 @@ const config = {
         copyright: `Copyright © ${new Date().getFullYear()} Payhere Payments Ltd`,
       },
       prism: {
-        theme: prismThemes.github,
-        darkTheme: prismThemes.dracula,
+        // Code panels are always dark (the "console" signature), regardless
+        // of the site's light/dark toggle, so both prism themes match.
+        theme: prismThemes.oneDark,
+        darkTheme: prismThemes.oneDark,
       },
     }),
 };

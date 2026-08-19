@@ -1,8 +1,8 @@
 /**
- * Global tokens, sourced from the Payhere Design System (colors,
- * type, spacing, radii). Infima variables are mapped onto them so
- * the docs/blog theme inherits the same brand system as the
- * marketing site.
+ * "Console" theme — an IDE-inspired docs look, grounded in the
+ * Payhere Design System (colors, type, spacing, radii). Supports
+ * both light and dark site themes; the code/tabs "editor" surface
+ * stays permanently dark in both, as the site's signature element.
  */
 
 :root {
@@ -49,7 +49,22 @@
   --ifm-button-border-radius: var(--ph-radius-md);
   --ifm-card-border-radius: var(--ph-radius-lg);
   --ifm-code-font-size: 92%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --docusaurus-highlighted-code-line-bg: rgba(255, 255, 255, 0.08);
+
+  --ph-sidebar-active-bg: rgba(0, 77, 201, 0.08);
+  --ph-sidebar-bg: var(--ph-gray-50);
+  --ph-sidebar-border: var(--ph-gray-200);
+  --ph-code-bg: var(--ph-gray-50);
+  --ph-code-border: var(--ph-gray-200);
+
+  /* The "editor" surface (tabs + code panels) is always dark,
+     independent of the site's light/dark toggle. */
+  --ph-editor-bg: var(--ph-navy-ink);
+  --ph-editor-strip: #061630;
+  --ph-editor-active: #0d2249;
+  --ph-editor-border: rgba(255, 255, 255, 0.1);
+  --ph-editor-text: #e7ecf5;
+  --ph-editor-muted: rgba(255, 255, 255, 0.5);
 }
 
 [data-theme='dark'] {
@@ -60,7 +75,289 @@
   --ifm-color-primary-light: #749eff;
   --ifm-color-primary-lighter: #86aaff;
   --ifm-color-primary-lightest: #bacfff;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  --docusaurus-highlighted-code-line-bg: rgba(255, 255, 255, 0.06);
+
+  --ifm-background-color: #0b0f17;
+  --ifm-background-surface-color: #121826;
+  --ifm-navbar-background-color: #0d111c;
+  --ifm-color-emphasis-200: #1b2333;
+  --ifm-color-emphasis-300: #232b3d;
+  --ifm-toc-border-color: #232b3d;
+  --ifm-font-color-base: #e7ecf5;
+
+  --ph-sidebar-active-bg: rgba(77, 139, 255, 0.14);
+  --ph-sidebar-bg: #0e131c;
+  --ph-sidebar-border: #232b3d;
+  --ph-code-bg: var(--ifm-color-emphasis-100);
+  --ph-code-border: var(--ifm-color-emphasis-300);
+}
+
+/* ============================================================
+   Navbar
+   ============================================================ */
+
+.navbar {
+  box-shadow: 0 1px 0 0 var(--ifm-toc-border-color);
+}
+
+.navbar__title {
+  font-weight: 700;
+}
+
+.navbar__link {
+  font-weight: 500;
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.92rem;
+  border-radius: var(--ph-radius-sm);
+}
+
+.navbar__link:hover {
+  color: var(--ph-blue-hover);
+}
+
+[data-theme='dark'] .navbar__link:hover {
+  color: var(--ifm-color-primary-lightest);
+}
+
+.navbar__link--active {
+  font-weight: 600;
+}
+
+/* ============================================================
+   Sidebar (docs menu) — file-tree styling
+   ============================================================ */
+
+.theme-doc-sidebar-container {
+  background: var(--ph-sidebar-bg);
+  border-right: 1px solid var(--ph-sidebar-border) !important;
+}
+
+.menu {
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.84rem;
+}
+
+.menu__link {
+  border-radius: var(--ph-radius-sm);
+  font-weight: 500;
+  transition: background-color 0.12s ease, color 0.12s ease, box-shadow 0.12s ease;
+}
+
+.menu__link:hover {
+  background: var(--ifm-menu-color-background-hover);
+}
+
+.menu__link--active:not(.menu__link--sublist) {
+  background: var(--ph-sidebar-active-bg);
+  box-shadow: inset 2px 0 0 0 var(--ifm-color-primary);
+  font-weight: 600;
+}
+
+.menu__list-item-collapsible--active {
+  background: transparent;
+}
+
+.menu__list-item-collapsible--active .menu__link--sublist {
+  font-weight: 600;
+}
+
+.menu__list-item:not(:first-child) {
+  margin-top: 0.15rem;
+}
+
+.theme-doc-sidebar-item-category > .menu__list-item-collapsible > .menu__link {
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+/* Tree guide lines for nested categories, like a file-tree indent rule */
+.menu__list .menu__list {
+  margin-left: 0.65rem;
+  padding-left: 0.65rem;
+  border-left: 1px solid var(--ph-sidebar-border);
+}
+
+/* ============================================================
+   Main content
+   ============================================================ */
+
+article h1 {
+  letter-spacing: -0.01em;
+}
+
+.theme-doc-breadcrumbs {
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.82rem;
+}
+
+.markdown h2 {
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--ifm-toc-border-color);
+}
+
+.markdown > h2:first-child,
+.markdown > *:first-child h2 {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+}
+
+.markdown h3 {
+  margin-top: 2rem;
+}
+
+/* ============================================================
+   Editor surface — code blocks and tabs, always dark
+   ============================================================ */
+
+div[class^='codeBlockContainer'] {
+  background: var(--ph-editor-bg) !important;
+  border: 1px solid var(--ph-editor-border);
+  border-radius: var(--ph-radius-lg);
+  box-shadow: none;
+}
+
+div[class^='codeBlockContainer'] code {
+  color: var(--ph-editor-text);
+}
+
+code {
+  border-radius: var(--ph-radius-sm);
+}
+
+.tabs {
+  border-bottom: none;
+  background: var(--ph-editor-strip);
+  border: 1px solid var(--ph-editor-border);
+  border-radius: var(--ph-radius-lg) var(--ph-radius-lg) 0 0;
+  padding: 0.4rem 0.4rem 0;
+  gap: 0.25rem;
+}
+
+.tabs__item {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  border-radius: var(--ph-radius-sm) var(--ph-radius-sm) 0 0;
+  font-family: var(--ifm-font-family-monospace);
+  font-weight: 500;
+  font-size: 0.82rem;
+  padding: 0.55rem 1rem 0.55rem 0.75rem;
+  color: var(--ph-editor-muted);
+}
+
+.tabs__item::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.25);
+  flex-shrink: 0;
+}
+
+.tabs__item--active {
+  background: var(--ph-editor-active);
+  color: var(--ph-editor-text);
+  font-weight: 600;
+}
+
+.tabs__item--active::before {
+  background: #34d399;
+}
+
+[role='tabpanel'] > div[class^='codeBlockContainer'] {
+  border-top: none;
+  border-radius: 0 0 var(--ph-radius-lg) var(--ph-radius-lg);
+  margin-top: 0 !important;
+}
+
+/* Tables */
+
+table {
+  border-radius: var(--ph-radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--ifm-table-border-color);
+}
+
+table thead tr {
+  background: var(--ph-code-bg);
+}
+
+/* Pagination footer nav */
+
+.pagination-nav__link {
+  border-radius: var(--ph-radius-lg);
+  border-color: var(--ph-code-border);
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+.pagination-nav__link:hover {
+  border-color: var(--ifm-color-primary);
+  transform: translateY(-1px);
+}
+
+.pagination-nav__sublabel {
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ifm-color-emphasis-600);
+}
+
+/* ============================================================
+   Footer
+   ============================================================ */
+
+.footer--dark {
+  --ifm-footer-background-color: var(--ph-navy-darker);
+}
+
+.footer__title {
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.footer__link-item {
+  transition: color 0.12s ease;
+}
+
+.footer__link-item:hover {
+  color: var(--ph-blue-hover);
+}
+
+.footer__links {
+  margin-bottom: 2rem;
+}
+
+.footer__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  text-align: left;
+  margin-top: 0;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer__bottom .margin-bottom--sm {
+  margin-bottom: 0 !important;
+}
+
+.footer__logo {
+  width: 18px;
+  height: auto;
+  opacity: 0.55;
+}
+
+.footer__copyright {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.45);
 }
 
 /*
