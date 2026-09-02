@@ -132,7 +132,10 @@ const config = {
             items: [
               { label: "Getting Started", to: "/docs/intro" },
               { label: "Embed SDK", to: "/docs/embed-sdk" },
-              { label: "API Reference", to: "/docs/api-auth" },
+              {
+                label: "API Reference",
+                to: "/docs/api-reference/payhere-rest-api",
+              },
             ],
           },
           {

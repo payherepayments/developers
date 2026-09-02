@@ -63,4 +63,4 @@ Webhooks provide a secure way for us to communicate payment and customer informa
 
 Use our API to build advanced integrations.
 
-[Read more](api-auth.md)
+[Read more](api-reference/payhere-rest-api)

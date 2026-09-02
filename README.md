@@ -29,6 +29,9 @@ Files under `docs/api-reference` are generated and gitignored. CI regenerates
 them before every build. The scheduled OpenAPI sync workflow opens a pull
 request when the deployed sandbox contract changes.
 
+Legacy hand-written API URLs are preserved as `301` redirects in `vercel.json`.
+Keep that map updated if a generated operation ID—and therefore its URL—changes.
+
 ## Build
 
 ```
