@@ -14,7 +14,7 @@ If you are building a platform integration [please reach out to us](mailto:suppo
 
 ## Subscribing to a REST hook
 
-In order to start receiving REST hooks, you first need to subscribe to a resource or event for a given Company. Follow our [API authentication guide](/docs/api-auth) to provide an API token.
+In order to start receiving REST hooks, you first need to subscribe to a resource or event for a given Company. Follow our [API authentication guide](/docs/api-reference/payhere-rest-api#authentication) to provide an API token.
 
 <Tabs>
 <TabItem value="curl" label="Curl">

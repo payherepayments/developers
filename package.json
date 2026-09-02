@@ -3,9 +3,13 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "api:clean": "docusaurus clean-api-docs publicV1",
+    "api:generate": "yarn api:clean && docusaurus gen-api-docs publicV1",
+    "api:lint": "redocly lint openapi/public_v1.yaml",
+    "api:sync": "node scripts/sync-openapi.mjs",
     "docusaurus": "docusaurus",
-    "start": "docusaurus start",
-    "build": "docusaurus build",
+    "start": "yarn api:generate && docusaurus start",
+    "build": "yarn api:generate && docusaurus build",
     "swizzle": "docusaurus swizzle",
     "clear": "docusaurus clear",
     "serve": "docusaurus serve",
@@ -17,13 +21,18 @@
     "@docusaurus/preset-classic": "3.10.2",
     "@mdx-js/react": "^3.0.0",
     "clsx": "^2.0.0",
+    "docusaurus-plugin-openapi-docs": "5.2.0",
+    "docusaurus-plugin-sass": "0.2.6",
+    "docusaurus-theme-openapi-docs": "5.2.0",
     "prism-react-renderer": "^2.3.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "3.10.2",
-    "@docusaurus/types": "3.10.2"
+    "@docusaurus/types": "3.10.2",
+    "@redocly/cli": "2.51.0",
+    "yaml": "2.9.0"
   },
   "browserslist": {
     "production": [
@@ -38,6 +47,6 @@
     ]
   },
   "engines": {
-    "node": ">=18.0"
+    "node": "^20.19.0 || >=22.12.0"
   }
 }

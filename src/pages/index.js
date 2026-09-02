@@ -93,7 +93,7 @@ const ROUTES = [
     description:
       "Full control over payments, plans, subscriptions and refunds from your own backend.",
     effort: "Developer",
-    to: "/docs/api-auth",
+    to: "/docs/api-reference/payhere-rest-api",
   },
 ];
 
@@ -135,7 +135,10 @@ function Hero() {
             <Link className={styles.primaryButton} to="/docs/intro">
               Get started
             </Link>
-            <Link className={styles.secondaryButton} to="/docs/api-auth">
+            <Link
+              className={styles.secondaryButton}
+              to="/docs/api-reference/payhere-rest-api"
+            >
               API reference
             </Link>
           </div>

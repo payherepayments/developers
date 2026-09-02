@@ -1,6 +1,89 @@
 {
+  "$schema": "https://openapi.vercel.sh/vercel.json",
   "buildCommand": "yarn build",
   "outputDirectory": "build",
   "installCommand": "yarn install",
-  "framework": "docusaurus-2"
+  "framework": "docusaurus-2",
+  "redirects": [
+    {
+      "source": "/docs/api-auth",
+      "destination": "/docs/api-reference/payhere-rest-api#authentication",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/api-current-company-show",
+      "destination": "/docs/api-reference/get-current-company",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/api-current-company-update",
+      "destination": "/docs/api-reference/update-current-company",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/api-current-company-stats",
+      "destination": "/docs/api-reference/get-current-company-stats",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/api-customers",
+      "destination": "/docs/api-reference/list-customers",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/api-customer-show",
+      "destination": "/docs/api-reference/get-customer",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/api-payments",
+      "destination": "/docs/api-reference/list-payments",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/api-payment-show",
+      "destination": "/docs/api-reference/get-payment",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/api-plans",
+      "destination": "/docs/api-reference/list-plans",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/api-plans-create",
+      "destination": "/docs/api-reference/create-plan",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/api-plans-update",
+      "destination": "/docs/api-reference/update-plan",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/api-refunds",
+      "destination": "/docs/api-reference/create-refund",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/api-subscriptions",
+      "destination": "/docs/api-reference/list-subscriptions",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/api-subscription-show",
+      "destination": "/docs/api-reference/get-subscription",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/api-subscription-destroy",
+      "destination": "/docs/api-reference/cancel-subscription",
+      "statusCode": 301
+    },
+    {
+      "source": "/docs/api-user",
+      "destination": "/docs/api-reference/get-current-user",
+      "statusCode": 301
+    }
+  ]
 }

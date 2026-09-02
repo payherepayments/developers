@@ -382,3 +382,693 @@ table thead tr {
     grid-template-columns: 1fr;
   }
 }
+
+/* ============================================================
+   Generated OpenAPI reference
+
+   The OpenAPI theme uses the same generic `.tabs` classes as our dark
+   editor-style code samples. These scoped rules give API controls their own
+   treatment while preserving that editor styling in the hand-written docs.
+   ============================================================ */
+
+.theme-api-markdown {
+  --openapi-card-background-color: var(--ph-gray-50);
+  --openapi-input-background: #fff;
+  --openapi-input-border: var(--ph-blue);
+  --openapi-tree-line-color: var(--ph-gray-300);
+  --openapi-code-tab-border-color: var(--ph-editor-border);
+  --openapi-explorer-border-color: var(--ph-gray-200);
+  --openapi-explorer-font-size-input: 0.8125rem;
+  --openapi-explorer-font-size-code: 0.78rem;
+  --openapi-explorer-padding-input: 0.65rem 0.75rem;
+  align-items: flex-start;
+}
+
+[data-theme='dark'] .theme-api-markdown {
+  --openapi-card-background-color: #151b27;
+  --openapi-input-background: #0e131c;
+  --openapi-tree-line-color: #30394a;
+  --openapi-explorer-border-color: #2a3343;
+}
+
+.theme-api-markdown .openapi-left-panel__container {
+  border-right: 0;
+  padding-right: 2rem !important;
+}
+
+.theme-api-markdown .openapi-right-panel__container {
+  padding-left: 2rem !important;
+}
+
+.theme-api-markdown .openapi__heading {
+  margin-bottom: 0.85rem !important;
+  font-size: clamp(2.25rem, 3vw, 3rem);
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+}
+
+.theme-api-markdown .openapi__method-endpoint {
+  width: 100%;
+  padding: 0.65rem 0.75rem;
+  background: var(--ph-gray-50);
+  border-color: var(--ph-gray-200);
+  border-radius: var(--ph-radius-lg);
+}
+
+[data-theme='dark'] .theme-api-markdown .openapi__method-endpoint {
+  background: var(--ifm-background-surface-color);
+  border-color: var(--ifm-color-emphasis-300);
+}
+
+.theme-api-markdown .openapi__method-endpoint-path {
+  overflow-wrap: anywhere;
+  font-size: 0.78rem;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.theme-api-markdown .openapi__divider {
+  margin: 1.35rem 0 1.65rem;
+}
+
+.theme-api-markdown .openapi-left-panel__container > p {
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+/* API response, content-type, and schema tabs are compact controls, not code
+   editor tabs. */
+.theme-api-markdown .openapi-tabs__response-list-container,
+.theme-api-markdown .openapi-tabs__mime-list-container,
+.theme-api-markdown .openapi-tabs__schema-list-container,
+.theme-api-markdown .openapi-tabs__operation-list-container {
+  gap: 0.35rem;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+}
+
+.theme-api-markdown .openapi-tabs__response-code-item,
+.theme-api-markdown .openapi-tabs__mime-item,
+.theme-api-markdown .openapi-tabs__schema-item,
+.theme-api-markdown .openapi-tabs__operation-item {
+  min-height: 30px;
+  margin-right: 0;
+  padding: 0.35rem 0.7rem;
+  background: transparent;
+  border: 1px solid var(--ph-gray-200);
+  border-radius: var(--ph-radius-md);
+  color: var(--ifm-color-emphasis-700);
+  font-size: 0.72rem;
+  line-height: 1;
+}
+
+[data-theme='dark'] .theme-api-markdown .openapi-tabs__response-code-item,
+[data-theme='dark'] .theme-api-markdown .openapi-tabs__mime-item,
+[data-theme='dark'] .theme-api-markdown .openapi-tabs__schema-item,
+[data-theme='dark'] .theme-api-markdown .openapi-tabs__operation-item {
+  border-color: var(--ifm-color-emphasis-300);
+}
+
+.theme-api-markdown .openapi-tabs__response-code-item::before,
+.theme-api-markdown .openapi-tabs__mime-item::before,
+.theme-api-markdown .openapi-tabs__schema-item::before,
+.theme-api-markdown .openapi-tabs__operation-item::before {
+  display: none;
+}
+
+.theme-api-markdown .openapi-tabs__mime-item.active,
+.theme-api-markdown .openapi-tabs__schema-item.active,
+.theme-api-markdown .openapi-tabs__operation-item.active {
+  background: var(--ph-sidebar-active-bg);
+  border-color: rgba(0, 77, 201, 0.35);
+  color: var(--ifm-color-primary);
+}
+
+[data-theme='dark'] .theme-api-markdown .openapi-tabs__mime-item.active,
+[data-theme='dark'] .theme-api-markdown .openapi-tabs__schema-item.active,
+[data-theme='dark'] .theme-api-markdown .openapi-tabs__operation-item.active {
+  border-color: rgba(77, 139, 255, 0.45);
+}
+
+.theme-api-markdown .openapi-tabs__response-code-item.success.active {
+  background: #238636;
+  border-color: #238636;
+}
+
+.theme-api-markdown .openapi-tabs__response-code-item.danger.active {
+  background: #cf3347;
+  border-color: #cf3347;
+}
+
+.theme-api-markdown .openapi-tabs__response-code-item.info.active {
+  background: var(--ph-blue);
+  border-color: var(--ph-blue);
+}
+
+.theme-api-markdown .openapi-tabs__response-schema-container,
+.theme-api-markdown .openapi-tabs__operation-schema-container,
+.theme-api-markdown .openapi-tabs__mime-schema-container {
+  max-width: none;
+}
+
+/* Code samples retain the dark editor surface, but use the compact language
+   tabs already established in the hand-written API guides. */
+.theme-api-markdown
+  .openapi-tabs__code-container:not(.openapi-tabs__code-container-inner) {
+  padding: 0;
+  overflow: hidden;
+  background: var(--ph-editor-bg);
+  border: 1px solid var(--ph-editor-border);
+  border-radius: var(--ph-radius-lg);
+  box-shadow: none;
+}
+
+.theme-api-markdown
+  .openapi-tabs__code-container:not(.openapi-tabs__code-container-inner):hover {
+  box-shadow: none;
+}
+
+.theme-api-markdown
+  .openapi-tabs__code-container:not(.openapi-tabs__code-container-inner)
+  > .openapi-tabs__code-list-container {
+  gap: 0.25rem;
+  padding: 0.4rem;
+  background: var(--ph-editor-strip);
+  border: 0;
+  border-bottom: 1px solid var(--ph-editor-border);
+  border-radius: 0;
+}
+
+.theme-api-markdown
+  .openapi-tabs__code-container
+  .openapi-tabs__code-item {
+  flex: 0 0 auto;
+  flex-direction: row;
+  gap: 0.45rem;
+  min-height: 34px;
+  margin-right: 0;
+  padding: 0.45rem 0.7rem !important;
+  border: 1px solid transparent;
+  border-radius: var(--ph-radius-sm);
+  box-shadow: none !important;
+}
+
+.theme-api-markdown
+  .openapi-tabs__code-container
+  .openapi-tabs__code-item::after {
+  display: none;
+}
+
+.theme-api-markdown
+  .openapi-tabs__code-container
+  .openapi-tabs__code-item::before {
+  display: block;
+}
+
+.theme-api-markdown
+  .openapi-tabs__code-container
+  .openapi-tabs__code-item
+  > span {
+  padding: 0;
+  color: var(--ph-editor-muted);
+  font-size: 0.75rem;
+  line-height: 1;
+  text-transform: none;
+}
+
+.theme-api-markdown
+  .openapi-tabs__code-container
+  .openapi-tabs__code-item.active {
+  background: var(--ph-editor-active);
+  border-color: var(--ph-editor-border) !important;
+}
+
+.theme-api-markdown
+  .openapi-tabs__code-container
+  .openapi-tabs__code-item.active::before {
+  background: #34d399;
+}
+
+.theme-api-markdown
+  .openapi-tabs__code-container
+  .openapi-tabs__code-item.active
+  > span {
+  color: var(--ph-editor-text);
+}
+
+.theme-api-markdown
+  .openapi-tabs__code-container
+  > .margin-top--md {
+  margin-top: 0 !important;
+}
+
+.theme-api-markdown .openapi-tabs__code-container-inner {
+  margin-bottom: 0;
+}
+
+.theme-api-markdown
+  .openapi-tabs__code-container-inner
+  > .openapi-tabs__code-list-container {
+  gap: 0.25rem;
+  padding: 0.35rem 0.75rem 0;
+  background: #111722;
+  border: 0;
+  border-radius: 0;
+}
+
+.theme-api-markdown
+  .openapi-tabs__code-container-inner
+  .openapi-tabs__code-item {
+  min-height: 26px;
+  padding: 0.3rem 0.55rem !important;
+}
+
+.theme-api-markdown
+  .openapi-tabs__code-container-inner
+  .openapi-tabs__code-item::before {
+  display: none;
+}
+
+.theme-api-markdown
+  .openapi-tabs__code-container-inner
+  > .openapi-tabs__code-list-container:has(
+    > .openapi-tabs__code-item:only-child
+  ) {
+  display: none;
+}
+
+.theme-api-markdown .openapi-explorer__code-block-container {
+  box-shadow: none;
+}
+
+/* Explorer cards and form fields use the same quiet borders and radii as the
+   rest of the docs instead of the plugin's elevated demo-card treatment. */
+.theme-api-markdown .openapi-security__details,
+.theme-api-markdown .openapi-explorer__request-form {
+  overflow: hidden;
+  background: var(--ifm-background-surface-color);
+  border: 1px solid var(--openapi-explorer-border-color);
+  border-radius: var(--ph-radius-lg);
+  box-shadow: none;
+}
+
+.theme-api-markdown .openapi-explorer__request-form:hover {
+  box-shadow: 0 8px 24px -20px rgba(3, 13, 29, 0.45);
+}
+
+.theme-api-markdown .openapi-security__summary-container,
+.theme-api-markdown .openapi-explorer__request-header-container {
+  padding: 0.8rem 1rem;
+  background: var(--ph-gray-50);
+  letter-spacing: 0.035em;
+}
+
+[data-theme='dark'] .theme-api-markdown .openapi-security__summary-container,
+[data-theme='dark']
+  .theme-api-markdown
+  .openapi-explorer__request-header-container {
+  background: #151b27;
+}
+
+.theme-api-markdown .openapi-security__summary-container:hover {
+  background: var(--ph-gray-100);
+}
+
+[data-theme='dark']
+  .theme-api-markdown
+  .openapi-security__summary-container:hover {
+  background: #1b2333;
+}
+
+.theme-api-markdown .openapi-security__summary-header {
+  letter-spacing: 0.035em;
+}
+
+.theme-api-markdown .openapi-explorer__details-outer-container {
+  padding: 0.75rem 1rem 1rem;
+}
+
+.theme-api-markdown .openapi-explorer__form-item {
+  padding: 0.55rem 0;
+}
+
+.theme-api-markdown .openapi-explorer__form-item-input,
+.theme-api-markdown .openapi-explorer__select-input {
+  border: 1px solid var(--openapi-explorer-border-color);
+  border-radius: var(--ph-radius-md);
+  color: var(--ifm-font-color-base);
+}
+
+.theme-api-markdown .openapi-explorer__form-item-input:hover {
+  border-color: var(--ifm-color-emphasis-400);
+}
+
+.theme-api-markdown .openapi-explorer__form-item-input:focus,
+.theme-api-markdown .openapi-explorer__select-input:focus {
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0 0 0 3px rgba(0, 77, 201, 0.12);
+}
+
+.theme-api-markdown .openapi-schema__list-item {
+  padding-top: 0.55rem;
+  padding-bottom: 0.55rem;
+}
+
+.theme-api-markdown .openapi-schema__property {
+  font-size: 0.84rem;
+  font-weight: 600;
+}
+
+.theme-api-markdown .openapi-schema__type,
+.theme-api-markdown .openapi-schema__name {
+  font-size: 0.8rem;
+}
+
+.theme-api-markdown .openapi-schema__required {
+  padding: 0.12rem 0.35rem;
+  background: rgba(207, 51, 71, 0.08);
+  border-radius: 999px;
+}
+
+.theme-api-markdown .openapi-schema__divider {
+  margin-right: 0.6rem;
+  margin-left: 0.6rem;
+}
+
+/* With the docs sidebar open, intermediate laptop widths leave too little
+   room for a useful split view. Stack the reference and explorer until both
+   columns can breathe. */
+@media (min-width: 997px) and (max-width: 1300px) {
+  .theme-api-markdown {
+    display: block;
+  }
+
+  .theme-api-markdown .openapi-left-panel__container,
+  .theme-api-markdown .openapi-right-panel__container {
+    width: 100%;
+    max-width: 100%;
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+    --ifm-col-width: 100%;
+  }
+
+  .theme-api-markdown .openapi-right-panel__container {
+    position: static;
+    max-height: none;
+    margin-top: 2rem;
+    padding-top: 2rem !important;
+    overflow: visible;
+    border-top: 1px solid var(--ifm-toc-border-color);
+  }
+}
+
+@media (max-width: 996px) {
+  .theme-api-markdown .openapi-left-panel__container,
+  .theme-api-markdown .openapi-right-panel__container {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+  }
+
+  .theme-api-markdown .openapi-right-panel__container {
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .theme-api-markdown .openapi__heading {
+    font-size: 2rem;
+  }
+
+  .theme-api-markdown .openapi-tabs__response-header-section {
+    gap: 0.75rem;
+  }
+
+  .theme-api-markdown .openapi-tabs__response-container {
+    margin-top: 0;
+  }
+}
+
+/* ============================================================
+   Generated OpenAPI overview
+
+   The generated information page does not use `.theme-api-markdown`, so it
+   needs a small page-specific layer for its version, export, and security
+   scheme components.
+   ============================================================ */
+
+html[class*='docs-doc-id-api-reference/payhere-rest-api']
+  .theme-doc-version-badge {
+  padding: 0.28rem 0.55rem;
+  background: var(--ph-sidebar-active-bg);
+  border: 1px solid rgba(0, 77, 201, 0.2);
+  border-radius: 999px;
+  color: var(--ifm-color-primary);
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+html[class*='docs-doc-id-api-reference/payhere-rest-api'] .export-button {
+  padding: 0.42rem 0.8rem;
+  background: transparent;
+  border: 1px solid var(--ph-gray-300);
+  border-radius: var(--ph-radius-md);
+  color: var(--ifm-color-primary);
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+
+html[class*='docs-doc-id-api-reference/payhere-rest-api']
+  .export-button:hover {
+  background: var(--ph-sidebar-active-bg);
+  border-color: rgba(0, 77, 201, 0.35);
+}
+
+[data-theme='dark'][class*='docs-doc-id-api-reference/payhere-rest-api']
+  .export-button {
+  border-color: var(--ifm-color-emphasis-300);
+}
+
+html[class*='docs-doc-id-api-reference/payhere-rest-api']
+  .openapi__heading {
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem !important;
+  font-size: clamp(2.5rem, 4vw, 3rem);
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+}
+
+html[class*='docs-doc-id-api-reference/payhere-rest-api']
+  .openapi__heading
+  + p {
+  max-width: 760px;
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: var(--ifm-color-emphasis-800);
+}
+
+html[class*='docs-doc-id-api-reference/payhere-rest-api']
+  .openapi-tabs__heading {
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--ifm-toc-border-color);
+}
+
+html[class*='docs-doc-id-api-reference/payhere-rest-api']
+  .openapi-tabs__schema-container {
+  overflow: hidden;
+  background: var(--ifm-background-surface-color);
+  border: 1px solid var(--ph-gray-200);
+  border-radius: var(--ph-radius-lg);
+}
+
+[data-theme='dark'][class*='docs-doc-id-api-reference/payhere-rest-api']
+  .openapi-tabs__schema-container {
+  border-color: var(--ifm-color-emphasis-300);
+}
+
+html[class*='docs-doc-id-api-reference/payhere-rest-api']
+  .openapi-tabs__schema-tabs-container {
+  padding: 0.65rem;
+  background: var(--ph-gray-50);
+  border-bottom: 1px solid var(--ph-gray-200);
+}
+
+[data-theme='dark'][class*='docs-doc-id-api-reference/payhere-rest-api']
+  .openapi-tabs__schema-tabs-container {
+  background: #151b27;
+  border-color: var(--ifm-color-emphasis-300);
+}
+
+html[class*='docs-doc-id-api-reference/payhere-rest-api']
+  .openapi-tabs__security-schemes {
+  width: 100%;
+  gap: 0.4rem;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+}
+
+html[class*='docs-doc-id-api-reference/payhere-rest-api']
+  .openapi-tabs__security-schemes
+  .openapi-tabs__schema-item {
+  min-height: 34px;
+  margin-right: 0;
+  padding: 0.5rem 0.75rem;
+  background: transparent;
+  border: 1px solid var(--ph-gray-200);
+  border-radius: var(--ph-radius-md);
+  color: var(--ifm-color-emphasis-700);
+  font-size: 0.74rem;
+}
+
+[data-theme='dark'][class*='docs-doc-id-api-reference/payhere-rest-api']
+  .openapi-tabs__security-schemes
+  .openapi-tabs__schema-item {
+  border-color: var(--ifm-color-emphasis-300);
+}
+
+html[class*='docs-doc-id-api-reference/payhere-rest-api']
+  .openapi-tabs__security-schemes
+  .openapi-tabs__schema-item::before {
+  display: none;
+}
+
+html[class*='docs-doc-id-api-reference/payhere-rest-api']
+  .openapi-tabs__security-schemes
+  .openapi-tabs__schema-item.active {
+  background: var(--ifm-background-surface-color);
+  border-color: rgba(0, 77, 201, 0.4);
+  color: var(--ifm-color-primary);
+  box-shadow: 0 1px 2px rgba(3, 13, 29, 0.06);
+}
+
+[data-theme='dark'][class*='docs-doc-id-api-reference/payhere-rest-api']
+  .openapi-tabs__security-schemes
+  .openapi-tabs__schema-item.active {
+  background: var(--ifm-background-color);
+  border-color: rgba(77, 139, 255, 0.5);
+}
+
+html[class*='docs-doc-id-api-reference/payhere-rest-api']
+  .openapi-tabs__schema-container
+  > .margin-top--md {
+  margin-top: 0 !important;
+  padding: 1.25rem;
+}
+
+html[class*='docs-doc-id-api-reference/payhere-rest-api']
+  .openapi-tabs__schema-container
+  table {
+  display: table;
+  width: 100%;
+  margin: 1rem 0 0;
+  table-layout: fixed;
+  border-color: var(--ph-gray-200);
+}
+
+html[class*='docs-doc-id-api-reference/payhere-rest-api']
+  .openapi-tabs__schema-container
+  tbody {
+  display: table-row-group;
+}
+
+html[class*='docs-doc-id-api-reference/payhere-rest-api']
+  .openapi-tabs__schema-container
+  tr {
+  background: transparent;
+}
+
+html[class*='docs-doc-id-api-reference/payhere-rest-api']
+  .openapi-tabs__schema-container
+  th {
+  width: 42%;
+  background: var(--ph-gray-50);
+  color: var(--ifm-color-emphasis-800);
+}
+
+html[class*='docs-doc-id-api-reference/payhere-rest-api']
+  .openapi-tabs__schema-container
+  th,
+html[class*='docs-doc-id-api-reference/payhere-rest-api']
+  .openapi-tabs__schema-container
+  td {
+  padding: 0.8rem 1rem;
+  border-color: var(--ph-gray-200);
+  vertical-align: middle;
+}
+
+[data-theme='dark'][class*='docs-doc-id-api-reference/payhere-rest-api']
+  .openapi-tabs__schema-container
+  table,
+[data-theme='dark'][class*='docs-doc-id-api-reference/payhere-rest-api']
+  .openapi-tabs__schema-container
+  th,
+[data-theme='dark'][class*='docs-doc-id-api-reference/payhere-rest-api']
+  .openapi-tabs__schema-container
+  td {
+  border-color: var(--ifm-color-emphasis-300);
+}
+
+[data-theme='dark'][class*='docs-doc-id-api-reference/payhere-rest-api']
+  .openapi-tabs__schema-container
+  th {
+  background: #151b27;
+}
+
+html[class*='docs-doc-id-api-reference/payhere-rest-api']
+  .col--12.markdown
+  > div:last-of-type {
+  margin-top: 2rem;
+  padding: 1.1rem 1.25rem;
+  background: var(--ph-gray-50);
+  border: 1px solid var(--ph-gray-200);
+  border-left: 3px solid var(--ifm-color-primary);
+  border-radius: var(--ph-radius-lg);
+}
+
+html[class*='docs-doc-id-api-reference/payhere-rest-api']
+  .col--12.markdown
+  > div:last-of-type
+  h3 {
+  margin-top: 0;
+}
+
+[data-theme='dark'][class*='docs-doc-id-api-reference/payhere-rest-api']
+  .col--12.markdown
+  > div:last-of-type {
+  background: #151b27;
+  border-color: var(--ifm-color-emphasis-300);
+  border-left-color: var(--ifm-color-primary);
+}
+
+@media (max-width: 576px) {
+  html[class*='docs-doc-id-api-reference/payhere-rest-api']
+    .openapi__heading {
+    font-size: 2.25rem;
+  }
+
+  html[class*='docs-doc-id-api-reference/payhere-rest-api']
+    .openapi-tabs__schema-tabs-container {
+    overflow-x: auto;
+  }
+
+  html[class*='docs-doc-id-api-reference/payhere-rest-api']
+    .openapi-tabs__security-schemes {
+    width: max-content;
+  }
+
+  html[class*='docs-doc-id-api-reference/payhere-rest-api']
+    .openapi-tabs__schema-container
+    th,
+  html[class*='docs-doc-id-api-reference/payhere-rest-api']
+    .openapi-tabs__schema-container
+    td {
+    display: block;
+    width: 100%;
+  }
+}

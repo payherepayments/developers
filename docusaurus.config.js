@@ -41,6 +41,7 @@ const config = {
         docs: {
           routeBasePath: "docs",
           sidebarPath: "./sidebars.js",
+          docItemComponent: "@theme/ApiItem",
         },
         blog: {
           showReadingTime: true,
@@ -52,10 +53,59 @@ const config = {
     ],
   ],
 
+  plugins: [
+    "docusaurus-plugin-sass",
+    [
+      "docusaurus-plugin-openapi-docs",
+      {
+        id: "openapi",
+        docsPluginId: "classic",
+        config: {
+          publicV1: {
+            specPath: "openapi/public_v1.yaml",
+            outputDir: "docs/api-reference",
+            downloadUrl:
+              "https://sandbox.payhere.co/openapi/public_v1.yaml",
+            hideSendButton: true,
+            showSchemas: false,
+            sidebarOptions: {
+              groupPathsBy: "tag",
+              categoryLinkSource: "tag",
+            },
+          },
+        },
+      },
+    ],
+  ],
+
+  themes: ["docusaurus-theme-openapi-docs"],
+
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       image: "img/open-graph.png",
+      languageTabs: [
+        {
+          highlight: "bash",
+          language: "curl",
+          logoClass: "curl",
+        },
+        {
+          highlight: "ruby",
+          language: "ruby",
+          logoClass: "ruby",
+        },
+        {
+          highlight: "javascript",
+          language: "nodejs",
+          logoClass: "nodejs",
+        },
+        {
+          highlight: "python",
+          language: "python",
+          logoClass: "python",
+        },
+      ],
       navbar: {
         title: "Developers",
         logo: {
@@ -82,7 +132,10 @@ const config = {
             items: [
               { label: "Getting Started", to: "/docs/intro" },
               { label: "Embed SDK", to: "/docs/embed-sdk" },
-              { label: "API Reference", to: "/docs/api-auth" },
+              {
+                label: "API Reference",
+                to: "/docs/api-reference/payhere-rest-api",
+              },
             ],
           },
           {
@@ -109,6 +162,7 @@ const config = {
         // of the site's light/dark toggle, so both prism themes match.
         theme: prismThemes.oneDark,
         darkTheme: prismThemes.oneDark,
+        additionalLanguages: ["ruby", "python"],
       },
     }),
 };
