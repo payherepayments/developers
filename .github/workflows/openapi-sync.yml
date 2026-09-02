@@ -1,0 +1,81 @@
+name: Sync OpenAPI contract
+
+on:
+  workflow_dispatch:
+  repository_dispatch:
+    types:
+      - openapi_updated
+  schedule:
+    - cron: "17 6 * * *"
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: openapi-contract-sync
+  cancel-in-progress: true
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: yarn
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile --non-interactive
+
+      - name: Download sandbox contract
+        run: yarn api:sync
+
+      - name: Detect contract changes
+        id: changes
+        shell: bash
+        run: |
+          if git diff --quiet -- openapi/public_v1.yaml; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Lint updated contract
+        if: steps.changes.outputs.changed == 'true'
+        run: yarn api:lint
+
+      - name: Build updated documentation
+        if: steps.changes.outputs.changed == 'true'
+        run: yarn build
+
+      - name: Open or update pull request
+        if: steps.changes.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          branch="automation/openapi-public-v1"
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git fetch origin "refs/heads/$branch:refs/remotes/origin/$branch" || true
+          git checkout -B "$branch"
+          git add openapi/public_v1.yaml
+          git commit -m "Update OpenAPI contract snapshot"
+          git push --force-with-lease origin "$branch"
+
+          pr_number=$(gh pr list --head "$branch" --state open --json number --jq '.[0].number')
+          if [ -z "$pr_number" ]; then
+            gh pr create \
+              --base main \
+              --head "$branch" \
+              --title "Update OpenAPI contract snapshot" \
+              --body "Updates the checked-in public v1 contract from the deployed sandbox API. CI validates the contract and generated documentation before merge."
+          fi

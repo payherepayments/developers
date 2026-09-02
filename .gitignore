@@ -4,3 +4,6 @@ node_modules/
 build/
 .docusaurus/
 .cache-loader/
+
+# Generated from openapi/public_v1.yaml before start/build.
+docs/api-reference/
