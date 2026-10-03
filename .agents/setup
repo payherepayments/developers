@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+repo_root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+cd "$repo_root"
+
+echo "Checking Node.js and Yarn..."
+if ! command -v node >/dev/null 2>&1 || ! command -v npm >/dev/null 2>&1; then
+  sudo apt-get update
+  sudo apt-get install -y nodejs npm
+fi
+
+if ! node -e 'process.exit(Number(process.versions.node.split(".")[0]) >= 20 ? 0 : 1)'; then
+  echo "Installing Node.js 22 (required by Docusaurus 3.10)..."
+  sudo npm install --global n
+  sudo n 22
+  hash -r
+fi
+
+if ! command -v yarn >/dev/null 2>&1 || [[ "$(yarn --version)" != 1.* ]]; then
+  if command -v corepack >/dev/null 2>&1; then
+    sudo corepack enable
+    corepack prepare yarn@1.22.22 --activate
+  else
+    sudo npm install --global yarn@1.22.22
+  fi
+fi
+
+echo "Installing locked dependencies (Node $(node --version), Yarn $(yarn --version))..."
+start=$SECONDS
+yarn install --frozen-lockfile --non-interactive
+echo "Dependency install finished in $((SECONDS - start))s"
