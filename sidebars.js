@@ -14,6 +14,7 @@ const sidebars = {
         "payment-button-js",
         "react-sdk",
         "embed-sdk",
+        "mcp",
         "webhooks",
         "resthooks",
         "wix-embed-sdk",
