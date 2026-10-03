@@ -59,6 +59,10 @@ Webhooks provide a secure way for us to communicate payment and customer informa
 
 [Read more](webhooks.md)
 
+## MCP
+
+Connect an AI app to your Payhere company to explore payments, customers, and more using the [MCP server](mcp.md).
+
 ## API
 
 Use our API to build advanced integrations.
